@@ -6,6 +6,9 @@ class_name Player
 @export var speed = 400
 @export var max_jumps = 2
 
+@export var acceleration = 1200.0  # How fast you speed up
+@export var friction = 400.0      # How fast you slide to a stop
+
 @onready var animated_sprite = $AnimatedSprite2D
 
 var active = true
@@ -22,14 +25,18 @@ func _physics_process(delta):
 
 	var direction = 0
 	if active==true:
-		if Input.is_action_just_pressed("jump") && jumps < max_jumps: #&& is_on_floor():
+		if Input.is_action_just_pressed("jump") && jumps < max_jumps && is_on_floor():
 			jump(jump_force)
 			jumps += 1
 		direction = Input.get_axis("move_left", "move_right")
+	
+	# horizontal movement
 	if direction != 0:
 		animated_sprite.flip_h = (direction == -1)
-	
-	velocity.x = direction * speed
+		velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
+
 	move_and_slide()
 	
 	update_animations(direction)
