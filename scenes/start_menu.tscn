@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://figakeric4xe"]
+
+[ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="1_2praq"]
+[ext_resource type="Script" uid="uid://b40equhx1unfa" path="res://scripts/start_menu.gd" id="1_5qotc"]
+[ext_resource type="Texture2D" uid="uid://bkd4hd1ahwar2" path="res://assets/textures/bg/Green.png" id="2_v86g4"]
+[ext_resource type="FontFile" uid="uid://cx1m2pgcbcdye" path="res://assets/fonts/Kenney Pixel Square.ttf" id="3_mwvnb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rlico"]
+font = ExtResource("3_mwvnb")
+font_size = 160
+font_color = Color(0.835294, 0, 1, 1)
+outline_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[node name="StartMenu" type="Control" unique_id=607911600]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qotc")
+
+[node name="BG" parent="." unique_id=338693473 instance=ExtResource("1_2praq")]
+bg_texture = ExtResource("2_v86g4")
+
+[node name="Title" type="Label" parent="." unique_id=1553453175]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 78.0
+offset_right = 1240.0
+offset_bottom = 318.0
+text = "MOUSE GAME"
+label_settings = SubResource("LabelSettings_rlico")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=576441493]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 369.0
+offset_right = 913.0
+offset_bottom = 519.0
+theme_override_fonts/font = ExtResource("3_mwvnb")
+theme_override_font_sizes/font_size = 60
+text = "START"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1158574547]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 603.0
+offset_right = 774.0
+offset_bottom = 710.0
+theme_override_fonts/font = ExtResource("3_mwvnb")
+theme_override_font_sizes/font_size = 60
+text = "QUIT"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://eoixxffeve81"]
+
+[ext_resource type="Script" uid="uid://cjp4wr3cx6sw8" path="res://scripts/player.gd" id="1_8vnnm"]
+[ext_resource type="Texture2D" uid="uid://bnex267md207j" path="res://assets/textures/player/mouse_bike.png" id="2_7wsbv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vwmer"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7wsbv")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7wsbv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7wsbv")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7wsbv")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t8wx"]
+size = Vector2(102, 146.125)
+
+[node name="Player" type="CharacterBody2D" unique_id=2117069531 groups=["player"]]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_8vnnm")
+max_jumps = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1922450349]
+sprite_frames = SubResource("SpriteFrames_vwmer")
+animation = &"run"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971819209]
+position = Vector2(-20, -1.0625)
+shape = SubResource("RectangleShape2D_2t8wx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1367413356]
+zoom = Vector2(2, 2)
+limit_bottom = 255
