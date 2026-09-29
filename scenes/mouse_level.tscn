@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://1sfpdcin4md7" path="res://scenes/ui_layer.tscn" id="4_fpo5b"]
 [ext_resource type="PackedScene" uid="uid://mwtkxlw36bis" path="res://scenes/deathzone.tscn" id="5_uh266"]
 [ext_resource type="PackedScene" uid="uid://v1fiyp0l185j" path="res://scenes/start.tscn" id="7_yuro1"]
-[ext_resource type="Texture2D" uid="uid://bmurbux3gfypp" path="res://scenes/hand-drawn-composition-notebook-pattern_23-2149286085.jpg" id="8_b7rbh"]
+[ext_resource type="Texture2D" uid="uid://bmurbux3gfypp" path="res://assets/textures/hand-drawn-composition-notebook-pattern_23-2149286085.jpg" id="8_b7rbh"]
 [ext_resource type="PackedScene" uid="uid://cn4rpl6hgiarx" path="res://scenes/exit.tscn" id="8_ueu2h"]
+[ext_resource type="PackedScene" uid="uid://bairj4jvk30c0" path="res://scenes/wing_reward.tscn" id="9_81mjr"]
 [ext_resource type="PackedScene" uid="uid://eoixxffeve81" path="res://scenes/mouse_player.tscn" id="9_er1be"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7rbh"]
@@ -51,7 +52,7 @@ position = Vector2(12494, 133)
 
 [node name="MousePlayer" parent="." unique_id=2117069531 instance=ExtResource("9_er1be")]
 position = Vector2(506, 77)
-max_jumps = 1
+max_jumps = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1866060494]
 material = SubResource("CanvasItemMaterial_lxesk")
@@ -72,5 +73,8 @@ polygon = PackedVector2Array(12, 11, 74, 39, 267.36523, -15, 458.98193, 149, 634
 position = Vector2(-98, 150)
 scale = Vector2(6.6800013, 1)
 polygon = PackedVector2Array(12, 11, 74, 39, 267.36523, -15, 458.98193, 149, 634.1316, -30, 766.6166, -36, 913.3232, 173, 1021, 119, 1154, 112, 1200, 110, 1306, 102, 1443, 60, 1584, 49, 1728, 33, 1960, -11, 2158, 430, -6, 264)
+
+[node name="WingReward" parent="." unique_id=42478789 instance=ExtResource("9_81mjr")]
+position = Vector2(4878, 23)
 
 [editable path="Deathzone"]
