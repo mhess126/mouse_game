@@ -5,7 +5,7 @@ class_name Player
 @export var jump_force = 140
 @export var speed = 400
 @export var max_jumps = 2
-@export var rotation_speed = 20.0
+@export var rotation_speed = 5.0
 
 @export var acceleration = 1200.0  # How fast you speed up
 @export var friction = 400.0      # How fast you slide to a stop
@@ -67,7 +67,8 @@ func update_animations(direction):
 		else:
 			animated_sprite.play("fall")
 
-func reward(reward: String):
-	wing_sprite.visible = true
-	max_jumps = 4
-	
+func reward(reward_type: String):
+	if reward_type == "wing":
+		wing_sprite.visible = true
+		max_jumps = 4
+		
