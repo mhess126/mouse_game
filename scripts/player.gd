@@ -12,6 +12,7 @@ class_name Player
 @onready var components: Node2D = $Components
 @onready var animated_sprite = $Components/AnimatedSprite2D
 @onready var wing_sprite: Sprite2D = $Components/WingSprite
+@onready var dirt: CPUParticles2D = $Components/Dirt
 
 var active = true
 var jumps = 0
@@ -44,6 +45,7 @@ func _physics_process(delta):
 		# Use abs() to keep the original scale size, then multiply by the direction sign (-1 or 1)
 		components.scale.x = abs(components.scale.x) * sign(direction)
 		velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
+		dirt.emitting = true # configured for one-shot
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
