@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://eoixxffeve81" path="res://scenes/mouse_player.tscn" id="9_er1be"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7rbh"]
-size = Vector2(10000, 400)
+size = Vector2(22655, 400)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lxesk"]
 
@@ -32,7 +32,7 @@ level_time = 60
 position = Vector2(-15, 987)
 
 [node name="CollisionShape2D" parent="Deathzone" index="0" unique_id=32061353]
-position = Vector2(0, -480)
+position = Vector2(6327.5, -480)
 shape = SubResource("RectangleShape2D_b7rbh")
 
 [node name="Objects" type="Node2D" parent="." unique_id=1949458513]
@@ -48,7 +48,7 @@ collision_mask = 2
 constant_angular_velocity = 0.06981317
 
 [node name="Exit" parent="." unique_id=17039323 instance=ExtResource("8_ueu2h")]
-position = Vector2(12494, 133)
+position = Vector2(12494, 114)
 
 [node name="MousePlayer" parent="." unique_id=2117069531 instance=ExtResource("9_er1be")]
 position = Vector2(506, 77)
