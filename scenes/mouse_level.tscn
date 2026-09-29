@@ -60,7 +60,7 @@ position = Vector2(0, -38)
 physics_material_override = SubResource("PhysicsMaterial_b7rbh")
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" unique_id=2088901285]
-position = Vector2(-97, 149)
+position = Vector2(-105.26318, 139.8)
 scale = Vector2(6.6800013, 1)
 color = Color(0.6292371, 0.40353835, 0.24883065, 1)
 antialiased = true
@@ -70,7 +70,7 @@ texture_rotation = -1.4922565
 polygon = PackedVector2Array(12, 11, 74, 39, 267.36523, -15, 458.98193, 149, 634.1316, -30, 766.6166, -36, 913.3232, 173, 1021, 119, 1154, 112, 1200, 110, 1306, 102, 1443, 60, 1584, 49, 1728, 33, 1960, -11, 2158, 430, -6, 264)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=265275113]
-position = Vector2(-98, 150)
+position = Vector2(-98.26318, 140.8)
 scale = Vector2(6.6800013, 1)
 polygon = PackedVector2Array(12, 11, 74, 39, 267.36523, -15, 458.98193, 149, 634.1316, -30, 766.6166, -36, 913.3232, 173, 1021, 119, 1154, 112, 1200, 110, 1306, 102, 1443, 60, 1584, 49, 1728, 33, 1960, -11, 2158, 430, -6, 264)
 
