@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmurbux3gfypp"
-path="res://.godot/imported/hand-drawn-composition-notebook-pattern_23-2149286085.jpg-0af9ef594097a5f030d634b9bab8f00b.ctex"
+uid="uid://1sk108e3l7ye"
+path="res://.godot/imported/illustration-wing-128x128.png-c92e01aeb1a932366343b6de01d3af16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/hand-drawn-composition-notebook-pattern_23-2149286085.jpg"
-dest_files=["res://.godot/imported/hand-drawn-composition-notebook-pattern_23-2149286085.jpg-0af9ef594097a5f030d634b9bab8f00b.ctex"]
+source_file="res://assets/textures/illustration-wing-128x128.png"
+dest_files=["res://.godot/imported/illustration-wing-128x128.png-c92e01aeb1a932366343b6de01d3af16.ctex"]
 
 [params]
 

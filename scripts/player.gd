@@ -8,8 +8,9 @@ class_name Player
 
 @export var acceleration = 1200.0  # How fast you speed up
 @export var friction = 400.0      # How fast you slide to a stop
-
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var components: Node2D = $Components
+@onready var animated_sprite = $Components/AnimatedSprite2D
+@onready var wing_sprite: Sprite2D = $Components/WingSprite
 
 var active = true
 var jumps = 0
@@ -32,7 +33,8 @@ func _physics_process(delta):
 	
 	# horizontal movement
 	if direction != 0:
-		animated_sprite.flip_h = (direction == -1)
+		# Use abs() to keep the original scale size, then multiply by the direction sign (-1 or 1)
+		components.scale.x = abs(components.scale.x) * sign(direction)
 		velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
@@ -56,3 +58,8 @@ func update_animations(direction):
 			animated_sprite.play("jump")
 		else:
 			animated_sprite.play("fall")
+
+func reward(reward: String):
+	wing_sprite.visible = true
+	max_jumps = 4
+	

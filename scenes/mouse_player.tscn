@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjp4wr3cx6sw8" path="res://scripts/player.gd" id="1_8vnnm"]
 [ext_resource type="Texture2D" uid="uid://bnex267md207j" path="res://assets/textures/player/mouse_bike.png" id="2_7wsbv"]
+[ext_resource type="Texture2D" uid="uid://1sk108e3l7ye" path="res://assets/textures/illustration-wing-128x128.png" id="3_r8eo0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vwmer"]
 animations = [{
@@ -47,15 +48,29 @@ collision_mask = 13
 script = ExtResource("1_8vnnm")
 max_jumps = 4
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1922450349]
-sprite_frames = SubResource("SpriteFrames_vwmer")
-animation = &"run"
-autoplay = "idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971819209]
-position = Vector2(-20, -1.0625)
-shape = SubResource("RectangleShape2D_2t8wx")
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=450145002]
+position = Vector2(-13, -137)
+energy = 0.3
+shadow_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1367413356]
 zoom = Vector2(2, 2)
 limit_bottom = 255
+
+[node name="Components" type="Node2D" parent="." unique_id=958328936]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Components" unique_id=1922450349]
+sprite_frames = SubResource("SpriteFrames_vwmer")
+animation = &"run"
+autoplay = "idle"
+
+[node name="WingSprite" type="Sprite2D" parent="Components" unique_id=877949541]
+visible = false
+position = Vector2(-84.5, -13.5)
+scale = Vector2(0.5859375, 0.5859375)
+texture = ExtResource("3_r8eo0")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971819209]
+position = Vector2(-20, -1.0625)
+shape = SubResource("RectangleShape2D_2t8wx")

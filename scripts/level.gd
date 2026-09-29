@@ -24,9 +24,14 @@ func _ready():
 	if player!=null:
 		player.global_position = start.get_spawn_pos()
 	var traps = get_tree().get_nodes_in_group("traps")
+	var rewards = get_tree().get_nodes_in_group("rewards")
+	
 	for trap in traps:
 		#trap.connect("touched_player", _on_trap_touched_player)
 		trap.touched_player.connect(_on_trap_touched_player)
+	
+	for reward in rewards:
+		reward.touched_player.connect(_on_reward_touched_player)
 	
 	exit.body_entered.connect(_on_exit_body_entered)
 	death_zone.body_entered.connect(_on_deathzone_body_entered)
@@ -64,6 +69,10 @@ func _on_deathzone_body_entered(body):
 func _on_trap_touched_player():
 	AudioPlayer.play_sfx("hurt")
 	reset_player()
+
+func _on_reward_touched_player():
+	AudioPlayer.play_sfx("hurt")
+	player.reward("wing")
 
 func reset_player():
 	player.velocity = Vector2.ZERO
