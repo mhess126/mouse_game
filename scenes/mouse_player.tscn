@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2t8wx"]
-size = Vector2(102, 146.125)
+size = Vector2(114, 143.0625)
 
 [node name="Player" type="CharacterBody2D" unique_id=2117069531 groups=["player"]]
 collision_layer = 2
@@ -72,5 +72,5 @@ texture = ExtResource("3_r8eo0")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971819209]
-position = Vector2(-20, -1.0625)
+position = Vector2(-14, -6.53125)
 shape = SubResource("RectangleShape2D_2t8wx")
