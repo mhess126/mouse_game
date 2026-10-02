@@ -69,8 +69,7 @@ func update_animations(direction):
 		else:
 			animated_sprite.play("fall")
 
-func reward(reward_type: String):
-	if reward_type == "wing":
+func reward(reward: String):
+	if reward == "wing":
 		wing_sprite.visible = true
 		max_jumps = 4
-		
