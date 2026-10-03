@@ -22,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7wsbv")
+"texture": ExtResource("3_qwiqu")
 }],
 "loop": 1,
 "name": &"idle",
@@ -105,7 +105,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vwmer")
 animation = &"riding"
 autoplay = "idle"
-frame_progress = 0.7407147
+frame_progress = 0.37373406
 
 [node name="WingSprite" type="Sprite2D" parent="Components" unique_id=877949541]
 visible = false

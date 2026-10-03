@@ -1,14 +1,20 @@
 extends CharacterBody2D
 class_name Player
 
+@export var max_stamina = 100
+@export var pedal_stamina_cost = 20
 @export var gravity = 400
 @export var jump_force = 140
 @export var speed = 400
 @export var max_jumps = 2
 @export var rotation_speed = 5.0
+@export var pedal_buffer_timer: float = 0.0
+@export var pedal_buffer_duration: float = 0.3 # 100 milliseconds buffer window
 
 @export var acceleration = 1200.0  # How fast you speed up
 @export var friction = 400.0      # How fast you slide to a stop
+@export var slope_gravity_scale = 1.0  # How strongly slopes pull you downhill
+@export var max_roll_speed = 600.0     # Speed cap when rolling downhill
 @onready var components: Node2D = $Components
 @onready var animated_sprite = $Components/AnimatedSprite2D
 @onready var wing_sprite: Sprite2D = $Components/WingSprite
@@ -16,8 +22,19 @@ class_name Player
 
 var active = true
 var jumps = 0
+var direction = 1.0
+
+func _ready():
+	# Stick to the ground when rolling down slopes instead of hopping off
+	floor_snap_length = 8.0
 
 func _physics_process(delta):
+	# Capture pedal event and set timer
+	if Input.is_action_just_pressed("pedal"):
+		pedal_buffer_timer = pedal_buffer_duration
+	if pedal_buffer_timer > 0.0:
+		pedal_buffer_timer -= delta
+
 	if is_on_floor()==false:
 		jumps = 0
 		velocity.y += gravity * delta
@@ -33,43 +50,61 @@ func _physics_process(delta):
 			
 		# Smoothly rotate toward the slope angle
 		animated_sprite.rotation = lerp_angle(animated_sprite.rotation, target_rotation, rotation_speed * delta)
-	var direction = 0
+
 	if active==true:
 		if Input.is_action_just_pressed("jump") && jumps < max_jumps && is_on_floor():
 			jump(jump_force)
 			jumps += 1
-		direction = Input.get_axis("move_left", "move_right")
-	
-	# horizontal movement
-	if direction != 0:
-		# Use abs() to keep the original scale size, then multiply by the direction sign (-1 or 1)
-		components.scale.x = abs(components.scale.x) * sign(direction)
-		velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
-		dirt.emitting = true # configured for one-shot
-	else:
-		velocity.x = move_toward(velocity.x, 0, friction * delta)
+
+		# Facing: only change when left/right is pressed; no velocity from this
+		var input_dir = Input.get_axis("move_left", "move_right")
+		if input_dir != 0.0:
+			direction = sign(input_dir)
+			# Use abs() to keep the original scale size, then multiply by the direction (-1 or 1)
+			components.scale.x = abs(components.scale.x) * direction
+
+		# Slope: normal.x is positive when the ground descends to the right
+		var slope_pull = 0.0
+		if is_on_floor():
+			slope_pull = get_floor_normal().x * gravity * slope_gravity_scale
+		var rolling_downhill = abs(slope_pull) > 1.0 && velocity.x * slope_pull >= 0.0
+
+		# horizontal movement
+		# Pedaling only adds speed: if already faster than speed in the facing direction, coast instead
+		var pedaling = pedal_buffer_timer > 0.0
+		if pedaling:
+			dirt.emitting = true # configured for one-shot
+		if pedaling && velocity.x * direction < speed:
+			velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
+		elif !rolling_downhill:
+			velocity.x = move_toward(velocity.x, 0, friction * delta)
+
+		velocity.x += slope_pull * delta
+		velocity.x = clamp(velocity.x, -max_roll_speed, max_roll_speed)
 
 	move_and_slide()
-	
 	update_animations(direction)
 
 func jump(force):
 	AudioPlayer.play_sfx("jump")
 	velocity.y = -force
 
-func update_animations(direction):
+func update_animations(_animation_direction):
 	if is_on_floor():
-		if direction == 0:
+		# peddling
+		if pedal_buffer_timer > 0.0:
 			animated_sprite.play("riding")
 		else:
-			animated_sprite.play("riding")
+			animated_sprite.pause()
 	else:
 		if velocity.y < 0:
+			# jump
 			animated_sprite.play("jump")
-		else:
-			animated_sprite.play("fall")
+		#else:
+			# fall
+			#animated_sprite.play("fall")
 
-func reward(reward: String):
-	if reward == "wing":
+func reward(reward_type: String):
+	if reward_type == "wing":
 		wing_sprite.visible = true
 		max_jumps = 4
