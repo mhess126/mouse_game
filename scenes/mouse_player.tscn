@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cjp4wr3cx6sw8" path="res://scripts/player.gd" id="1_8vnnm"]
 [ext_resource type="Texture2D" uid="uid://bnex267md207j" path="res://assets/textures/player/mouse_bike.png" id="2_7wsbv"]
+[ext_resource type="Texture2D" uid="uid://b4bf6lsawx5up" path="res://assets/textures/player/mouse_move/frame_1.png" id="3_qwiqu"]
 [ext_resource type="Texture2D" uid="uid://1sk108e3l7ye" path="res://assets/textures/illustration-wing-128x128.png" id="3_r8eo0"]
+[ext_resource type="Texture2D" uid="uid://boa5xgyrjd5my" path="res://assets/textures/player/mouse_move/frame_2.png" id="4_7jbp3"]
+[ext_resource type="Texture2D" uid="uid://cfbc43vily4r6" path="res://assets/textures/player/mouse_move/frame_3.png" id="5_xb4hn"]
+[ext_resource type="Texture2D" uid="uid://c8i08vfs7n6r7" path="res://assets/textures/player/mouse_move/frame_4.png" id="6_xfypw"]
+[ext_resource type="Texture2D" uid="uid://ckjye7dd3htfs" path="res://assets/textures/player/mouse_move/frame_5.png" id="7_5ia86"]
+[ext_resource type="Texture2D" uid="uid://jaxxn20vqy4h" path="res://assets/textures/player/mouse_move/frame_6.png" id="8_7eb16"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vwmer"]
 animations = [{
@@ -32,6 +38,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_qwiqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7jbp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xb4hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xfypw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5ia86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7eb16")
+}],
+"loop": 1,
+"name": &"riding",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_7wsbv")
 }],
 "loop": 1,
@@ -50,7 +79,7 @@ height = 4
 fill_from = Vector2(1, 0.13043478)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2t8wx"]
-size = Vector2(114, 143.0625)
+size = Vector2(91, 119.53125)
 
 [node name="Player" type="CharacterBody2D" unique_id=2117069531 groups=["player"]]
 collision_layer = 2
@@ -68,11 +97,15 @@ zoom = Vector2(2, 2)
 limit_bottom = 255
 
 [node name="Components" type="Node2D" parent="." unique_id=958328936]
+position = Vector2(1, -218)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Components" unique_id=1922450349]
+position = Vector2(0, 154)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vwmer")
-animation = &"run"
+animation = &"riding"
 autoplay = "idle"
+frame_progress = 0.7407147
 
 [node name="WingSprite" type="Sprite2D" parent="Components" unique_id=877949541]
 visible = false
@@ -82,7 +115,7 @@ texture = ExtResource("3_r8eo0")
 flip_h = true
 
 [node name="Dirt" type="CPUParticles2D" parent="Components" unique_id=967214948]
-position = Vector2(-68, 60)
+position = Vector2(-54, 203)
 emitting = false
 amount = 12
 texture = SubResource("GradientTexture2D_lxesk")
@@ -96,5 +129,5 @@ initial_velocity_min = 257.43
 initial_velocity_max = 257.43
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971819209]
-position = Vector2(-14, -6.53125)
+position = Vector2(0.5, -65)
 shape = SubResource("RectangleShape2D_2t8wx")
