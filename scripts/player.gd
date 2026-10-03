@@ -60,9 +60,9 @@ func jump(force):
 func update_animations(direction):
 	if is_on_floor():
 		if direction == 0:
-			animated_sprite.play("idle")
+			animated_sprite.play("riding")
 		else:
-			animated_sprite.play("run")
+			animated_sprite.play("riding")
 	else:
 		if velocity.y < 0:
 			animated_sprite.play("jump")
