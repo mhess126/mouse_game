@@ -3,6 +3,11 @@ extends Node
 var hurt = preload("res://assets/audio/hurt.wav")
 var jump = preload("res://assets/audio/jump.wav")
 
+@onready var music_player: AudioStreamPlayer = $MusicPlayer
+
+func play_music() -> void:
+	music_player.play()
+	
 func play_sfx(sfx_name: String):
 	var stream = null
 	if sfx_name == "hurt":

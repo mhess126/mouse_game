@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg4femlyrat43"]
+[gd_scene format=3 uid="uid://cg4femlyrat43"]
 
-[ext_resource type="AudioStream" uid="uid://1nq1n1nso2um" path="res://assets/audio/music.ogg" id="1_6cbcb"]
-[ext_resource type="Script" path="res://scripts/audio_player.gd" id="1_tm8uq"]
+[ext_resource type="Script" uid="uid://chupuihwcuf0k" path="res://scripts/audio_player.gd" id="1_tm8uq"]
+[ext_resource type="AudioStream" uid="uid://d1p12l6cqpftu" path="res://assets/audio/Mouse80sBGMusic.ogg" id="2_uacmn"]
 
-[node name="AudioPlayer" type="Node"]
+[node name="AudioPlayer" type="Node" unique_id=1916875709]
 script = ExtResource("1_tm8uq")
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_6cbcb")
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1139523901]
+stream = ExtResource("2_uacmn")

@@ -20,6 +20,8 @@ var time_left
 var win = false
 
 func _ready():
+	AudioPlayer.play_music()
+
 	player = get_tree().get_first_node_in_group("player")
 	if player!=null:
 		player.global_position = start.get_spawn_pos()
