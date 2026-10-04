@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg1vy768oxwxr"]
+[gd_scene format=3 uid="uid://cg1vy768oxwxr"]
 
 [ext_resource type="Texture2D" uid="uid://dajqljvjm2d2q" path="res://addons/rmsmartshape/editors/NormalRangeEditor/progress_texture.png" id="1"]
 [ext_resource type="Script" uid="uid://r4rt5qimdlyf" path="res://addons/rmsmartshape/editors/NormalRangeEditor/NormalRangeEditor.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dgd4sbhsw1no3" path="res://addons/rmsmartshape/editors/NormalRangeEditor/over_texture.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cax163h05b60j" path="res://addons/rmsmartshape/editors/NormalRangeEditor/under_texture.png" id="4"]
 
-[node name="NormalRangeEditor" type="VBoxContainer"]
+[node name="NormalRangeEditor" type="VBoxContainer" unique_id=736647053]
 anchors_preset = -1
 anchor_right = 0.087
 anchor_bottom = 0.027
@@ -15,10 +15,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 9
 script = ExtResource("2")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2046785978]
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CenterContainer"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CenterContainer" unique_id=1153932506]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0

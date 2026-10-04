@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://cl71flny1scun"]
+[gd_scene format=4 uid="uid://cl71flny1scun"]
 
 [ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="1_5hlge"]
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="3_edpr6"]
@@ -709,9 +709,9 @@ script = ExtResource("7_ncdby")
 _edge_meta_materials = Array[ExtResource("10_umoay")]([SubResource("Resource_vboqn")])
 fill_textures = Array[Texture2D]([ExtResource("6_ry0x0")])
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1330605645]
 
-[node name="WithTapering" type="Node2D" parent="."]
+[node name="WithTapering" type="Node2D" parent="." unique_id=1570750594]
 texture_repeat = 2
 position = Vector2(-30, 228)
 scale = Vector2(0.65, 0.65)
@@ -722,7 +722,7 @@ shape_material = SubResource("Resource_07ymf")
 tessellation_stages = 5
 tessellation_tolerence = 4.0
 
-[node name="WithoutTapering" type="Node2D" parent="."]
+[node name="WithoutTapering" type="Node2D" parent="." unique_id=412079335]
 texture_repeat = 2
 position = Vector2(400, 10)
 scale = Vector2(0.65, 0.65)
@@ -733,7 +733,7 @@ shape_material = SubResource("Resource_xsfev")
 tessellation_stages = 5
 tessellation_tolerence = 4.0
 
-[node name="Message" type="Label" parent="."]
+[node name="Message" type="Label" parent="." unique_id=2031284882]
 offset_left = 33.0
 offset_top = 82.0
 offset_right = 434.0
@@ -743,14 +743,14 @@ text = "NOTE: Sharp corner tapering can
 cause issues when used on shapes 
 with curved geometry"
 
-[node name="With" type="Label" parent="."]
+[node name="With" type="Label" parent="." unique_id=1051603666]
 offset_left = 275.0
 offset_top = 454.0
 offset_right = 503.0
 offset_bottom = 477.0
 text = "Sharp Corner Tapering"
 
-[node name="Without" type="Label" parent="."]
+[node name="Without" type="Label" parent="." unique_id=834672815]
 offset_left = 666.0
 offset_top = 237.0
 offset_right = 907.0

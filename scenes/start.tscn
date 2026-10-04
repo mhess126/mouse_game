@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://v1fiyp0l185j"]
+[gd_scene format=3 uid="uid://v1fiyp0l185j"]
 
 [ext_resource type="Texture2D" uid="uid://c678j8tvwelye" path="res://assets/textures/other/Start.png" id="1_8tlov"]
-[ext_resource type="Script" path="res://scripts/start.gd" id="1_dr3lh"]
+[ext_resource type="Script" uid="uid://72n1jj2krjeu" path="res://scripts/start.gd" id="1_dr3lh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fq7u"]
 atlas = ExtResource("1_8tlov")
@@ -125,7 +125,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5olux")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 20.0
 }]
@@ -133,18 +133,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrja1"]
 size = Vector2(34, 8)
 
-[node name="Start" type="StaticBody2D"]
+[node name="Start" type="StaticBody2D" unique_id=2024539782]
 script = ExtResource("1_dr3lh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1905795248]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_fmmtn")
 autoplay = "default"
 frame_progress = 0.500014
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=224339276]
 position = Vector2(11, -4)
 shape = SubResource("RectangleShape2D_lrja1")
 
-[node name="SpawnPosition" type="Marker2D" parent="."]
+[node name="SpawnPosition" type="Marker2D" parent="." unique_id=1218411464]
 position = Vector2(11, -28)

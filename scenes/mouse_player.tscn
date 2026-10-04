@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://eoixxffeve81"]
 
 [ext_resource type="Script" uid="uid://cjp4wr3cx6sw8" path="res://scripts/player.gd" id="1_8vnnm"]
-[ext_resource type="Texture2D" uid="uid://bnex267md207j" path="res://assets/textures/player/mouse_bike.png" id="2_7wsbv"]
 [ext_resource type="Texture2D" uid="uid://b4bf6lsawx5up" path="res://assets/textures/player/mouse_move/frame_1.png" id="3_qwiqu"]
 [ext_resource type="Texture2D" uid="uid://1sk108e3l7ye" path="res://assets/textures/illustration-wing-128x128.png" id="3_r8eo0"]
 [ext_resource type="Texture2D" uid="uid://boa5xgyrjd5my" path="res://assets/textures/player/mouse_move/frame_2.png" id="4_7jbp3"]
@@ -14,7 +13,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7wsbv")
+"texture": ExtResource("3_qwiqu")
 }],
 "loop": 1,
 "name": &"fall",
@@ -30,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7wsbv")
+"texture": ExtResource("3_qwiqu")
 }],
 "loop": 1,
 "name": &"jump",
@@ -61,7 +60,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7wsbv")
+"texture": ExtResource("3_qwiqu")
 }],
 "loop": 1,
 "name": &"run",
@@ -103,9 +102,8 @@ position = Vector2(1, -218)
 position = Vector2(0, 154)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vwmer")
-animation = &"riding"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.4739828
 
 [node name="WingSprite" type="Sprite2D" parent="Components" unique_id=877949541]
 visible = false

@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfi3wl3ecmvan"]
+[gd_scene format=3 uid="uid://bfi3wl3ecmvan"]
 
-[ext_resource type="Script" path="res://scripts/jump_pad.gd" id="1_1pog4"]
+[ext_resource type="Script" uid="uid://dsv76ov71ytnv" path="res://scripts/jump_pad.gd" id="1_1pog4"]
 [ext_resource type="Texture2D" uid="uid://dnb6wqimpodk7" path="res://assets/textures/other/Idle.png" id="1_2d15t"]
 [ext_resource type="Texture2D" uid="uid://djv3k06ejtag0" path="res://assets/textures/other/Jump (28x28).png" id="2_g5mr7"]
 
@@ -42,7 +42,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_2d15t")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -71,7 +71,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oki45")
 }],
-"loop": false,
+"loop": 0,
 "name": &"jump",
 "speed": 20.0
 }]
@@ -79,11 +79,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5o8ts"]
 size = Vector2(20, 2)
 
-[node name="JumpPad" type="Area2D"]
+[node name="JumpPad" type="Area2D" unique_id=533466927]
 collision_mask = 2
 script = ExtResource("1_1pog4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=372248473]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_udcq2")
 animation = &"jump"
@@ -91,7 +91,7 @@ autoplay = "idle"
 frame = 7
 frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1368312471]
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_5o8ts")
 

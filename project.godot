@@ -8,9 +8,9 @@
 
 config_version=5
 
-[animation]
+[addons]
 
-compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+ss2d/version="3.3.2"
 
 [application]
 
@@ -34,6 +34,10 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Martian Mike"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rmsmartshape/plugin.cfg")
 
 [input]
 

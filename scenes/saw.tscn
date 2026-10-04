@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://biflq2qticr8f"]
+[gd_scene format=3 uid="uid://biflq2qticr8f"]
 
-[ext_resource type="Script" path="res://scripts/trap.gd" id="1_50ffd"]
+[ext_resource type="Script" uid="uid://btcmjvuhj7ghm" path="res://scripts/trap.gd" id="1_50ffd"]
 [ext_resource type="Texture2D" uid="uid://bn7d2qwmquulw" path="res://assets/textures/other/Saw.png" id="1_auit2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gw2uj"]
@@ -40,28 +40,26 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_arxas"]
 _data = {
-"RESET": SubResource("Animation_ygbed"),
-"spin": SubResource("Animation_yrlh3")
+&"RESET": SubResource("Animation_ygbed"),
+&"spin": SubResource("Animation_yrlh3")
 }
 
-[node name="Saw" type="Node2D" groups=["traps"]]
+[node name="Saw" type="Node2D" unique_id=834447911 groups=["traps"]]
 script = ExtResource("1_50ffd")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1731152296]
 collision_layer = 8
 collision_mask = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1368846640]
 texture = ExtResource("1_auit2")
 hframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=185396518]
 shape = SubResource("CircleShape2D_gw2uj")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "spin"
-libraries = {
-"": SubResource("AnimationLibrary_arxas")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1089720579]
+libraries/ = SubResource("AnimationLibrary_arxas")
+autoplay = &"spin"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

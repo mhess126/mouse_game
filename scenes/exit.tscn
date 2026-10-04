@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cn4rpl6hgiarx"]
+[gd_scene format=3 uid="uid://cn4rpl6hgiarx"]
 
-[ext_resource type="Script" path="res://scripts/exit.gd" id="1_lxldl"]
+[ext_resource type="Script" uid="uid://c1kir1thf6xsa" path="res://scripts/exit.gd" id="1_lxldl"]
 [ext_resource type="Texture2D" uid="uid://cdlqr18vrxdbo" path="res://assets/textures/other/End (Pressed) (64x64).png" id="2_x2qii"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ckls7"]
@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qmqf7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 20.0
 }]
@@ -73,21 +73,21 @@ radius = 6.08276
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ju24"]
 size = Vector2(34, 8)
 
-[node name="Exit" type="Area2D"]
+[node name="Exit" type="Area2D" unique_id=1698018413]
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_lxldl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=760333769]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_bq7jo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1948041376]
 position = Vector2(0, -20)
 shape = SubResource("CircleShape2D_h20fs")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=167426601]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1297417419]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_0ju24")
