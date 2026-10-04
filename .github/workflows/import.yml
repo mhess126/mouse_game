@@ -1,0 +1,116 @@
+name: Godot Build & Export Pipeline
+
+on:
+  push:
+    branches: [ "main" ] # Triggers whenever you push changes to the main branch
+    tags: [ "v*" ] # Pushing a tag like v1.0.0 also builds and publishes a GitHub Release
+  pull_request:
+    branches: [ "main" ] # Triggers on Pull Requests to main
+
+# Set your project configurations once here
+env:
+  PROJECT_NAME: "mouse_game"
+
+jobs:
+  export-game:
+    runs-on: ubuntu-latest
+
+    # The env context isn't available in `container`, so the Godot version lives in a matrix instead.
+    strategy:
+      matrix:
+        godot_version: [ "4.7.2" ] # Simply update this string when upgrading Godot (e.g., "4.3.0", "4.4.0")
+
+    # Leverages the barichello container dynamically using the version specified above
+    container:
+      image: barichello/godot-ci:${{ matrix.godot_version }}
+
+    steps:
+      # The container runs as root but the workspace is owned by the runner user, so git rejects it as
+      # "dubious ownership". actions/checkout only trusts it temporarily, which breaks the LFS step below.
+      - name: Trust Workspace for Git
+        run: git config --global --add safe.directory '*'
+
+      # Step 1: Checkout without LFS so the LFS objects can come from the Actions cache instead of being re-downloaded
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      # The LFS object IDs make the cache key, so the cache is only invalidated when an LFS file actually changes
+      - name: List LFS Objects
+        run: git lfs ls-files --long | cut -d ' ' -f1 | sort -u > .lfs-assets-id
+
+      - name: Restore LFS Cache
+        uses: actions/cache@v4
+        with:
+          path: .git/lfs
+          key: lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      # Downloads only objects missing from the cache, then replaces the pointer files with the real content
+      - name: Pull LFS Files
+        run: |
+          git lfs install --local
+          git lfs pull
+
+      # git lfs ls-files marks files still left as pointers with "-" instead of "*"; fail loudly rather than export a broken build
+      - name: Verify LFS Files
+        run: |
+          if git lfs ls-files | grep -E '^[0-9a-f]+ - '; then
+            echo "::error::The LFS files above were not pulled"
+            exit 1
+          fi
+          echo "All $(git lfs ls-files | wc -l) LFS files present"
+
+      # Step 2: Establish target environment paths for output builds 
+      - name: Setup Build Folders
+        run: |
+          mkdir -v -p build/windows
+          # GitHub sets HOME=/github/home in containers, so move the image's export templates to where Godot looks for them
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${{ matrix.godot_version }}.stable ~/.local/share/godot/export_templates/${{ matrix.godot_version }}.stable
+
+      # Step 3: Run the headless export commands bundled inside the container.
+      # IMPORTANT: Ensure your export names exactly match the configurations inside your local export_presets.cfg file!
+      # Step 4: Run the Windows build export command
+      # .godot/ is gitignored, so a fresh checkout has no imported assets; import them first or the export can silently omit them
+      - name: Import Assets
+        run: godot --headless --import
+
+      - name: Export Windows Build
+        run: godot --headless --export-release "Windows Desktop" "build/windows/${{ env.PROJECT_NAME }}.exe"
+
+      # Step 5: Archive and compress individual build artifacts so they are readily packaged
+      - name: Post-Build Compression
+        run: |
+          cd build/windows && zip -r "../../${{ env.PROJECT_NAME }}-windows.zip" ./* && cd ../..
+
+      # Step 6: Upload the final zipped artifacts to your GitHub Action run page
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: packaged-game-builds
+          path: |
+            ${{ env.PROJECT_NAME }}-windows.zip
+
+  # Only runs for tag pushes: attaches the Windows build to a GitHub Release named after the tag
+  release:
+    needs: export-game
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to create releases and upload assets
+
+    steps:
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: packaged-game-builds
+
+      - name: Rename Build With Tag Version
+        run: mv "${{ env.PROJECT_NAME }}-windows.zip" "${{ env.PROJECT_NAME }}-${{ github.ref_name }}-windows.zip"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.PROJECT_NAME }}-${{ github.ref_name }}-windows.zip
+          generate_release_notes: true # Auto-fills notes from commits/PRs since the previous tag
