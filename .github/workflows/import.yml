@@ -92,9 +92,64 @@ jobs:
           path: |
             ${{ env.PROJECT_NAME }}-windows.zip
 
-  # Only runs for tag pushes: attaches the Windows build to a GitHub Release named after the tag
+  # Builds the equivalent of Godot's "Project > Pack Project as ZIP": the project source with real LFS content
+  # (not pointer files), importable straight from Godot's Project Manager
+  package-project:
+    runs-on: ubuntu-latest
+    outputs:
+      zip_name: ${{ steps.zip.outputs.zip_name }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: List LFS Objects
+        run: git lfs ls-files --long | cut -d ' ' -f1 | sort -u > .lfs-assets-id
+
+      - name: Restore LFS Cache
+        uses: actions/cache@v4
+        with:
+          path: .git/lfs
+          key: lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      - name: Pull LFS Files
+        run: |
+          git lfs install --local
+          git lfs pull
+
+      - name: Verify LFS Files
+        run: |
+          if git lfs ls-files | grep -E '^[0-9a-f]+ - '; then
+            echo "::error::The LFS files above were not pulled"
+            exit 1
+          fi
+          echo "All $(git lfs ls-files | wc -l) LFS files present"
+
+      # Named after the tag for releases, otherwise the abbreviated commit hash
+      - name: Zip Project
+        id: zip
+        run: |
+          if [ "${{ github.ref_type }}" = "tag" ]; then build_id="${{ github.ref_name }}"; else build_id="$(git rev-parse --short HEAD)"; fi
+          package="mouse-game-$build_id"
+          # Only tracked files go in, so .git/ and CI scratch files are left out
+          mkdir -p "staging/$package"
+          git ls-files -z | tar --null -T - -cf - | tar -xf - -C "staging/$package"
+          # zip -r writes an entry for every directory; Godot's importer needs them or it can't extract nested files
+          (cd staging && zip -r "../$package.zip" "$package")
+          echo "zip_name=$package.zip" >> "$GITHUB_OUTPUT"
+
+      # archive: false uploads the zip as-is, so the download isn't a zip nested inside another zip
+      - name: Upload Project Zip
+        uses: actions/upload-artifact@v7
+        with:
+          path: ${{ steps.zip.outputs.zip_name }}
+          archive: false
+
+  # Only runs for tag pushes: attaches the Windows build and project zip to a GitHub Release named after the tag
   release:
-    needs: export-game
+    needs: [ export-game, package-project ]
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     permissions:
@@ -106,11 +161,18 @@ jobs:
         with:
           name: packaged-game-builds
 
+      - name: Download Project Zip
+        uses: actions/download-artifact@v8
+        with:
+          name: ${{ needs.package-project.outputs.zip_name }}
+
       - name: Rename Build With Tag Version
         run: mv "${{ env.PROJECT_NAME }}-windows.zip" "${{ env.PROJECT_NAME }}-${{ github.ref_name }}-windows.zip"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ env.PROJECT_NAME }}-${{ github.ref_name }}-windows.zip
+          files: |
+            ${{ env.PROJECT_NAME }}-${{ github.ref_name }}-windows.zip
+            ${{ needs.package-project.outputs.zip_name }}
           generate_release_notes: true # Auto-fills notes from commits/PRs since the previous tag
