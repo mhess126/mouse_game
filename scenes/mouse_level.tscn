@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://u3deu4vjpi5q"]
 
 [ext_resource type="Script" uid="uid://btk5ab6ac1dmw" path="res://scripts/level.gd" id="1_er1be"]
-[ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="3_quub3"]
+[ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/(lv.1) junk pile 7.png" id="3_81mjr"]
 [ext_resource type="PackedScene" uid="uid://1sfpdcin4md7" path="res://scenes/ui_layer.tscn" id="4_fpo5b"]
 [ext_resource type="PackedScene" uid="uid://mwtkxlw36bis" path="res://scenes/deathzone.tscn" id="5_uh266"]
 [ext_resource type="PackedScene" uid="uid://v1fiyp0l185j" path="res://scenes/start.tscn" id="7_yuro1"]
 [ext_resource type="Texture2D" uid="uid://bmurbux3gfypp" path="res://assets/textures/hand-drawn-composition-notebook-pattern_23-2149286085.jpg" id="8_b7rbh"]
 [ext_resource type="PackedScene" uid="uid://cn4rpl6hgiarx" path="res://scenes/exit.tscn" id="8_ueu2h"]
-[ext_resource type="PackedScene" uid="uid://bairj4jvk30c0" path="res://scenes/wing_reward.tscn" id="9_81mjr"]
 [ext_resource type="PackedScene" uid="uid://eoixxffeve81" path="res://scenes/mouse_player.tscn" id="9_er1be"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7rbh"]
@@ -24,7 +23,42 @@ script = ExtResource("1_er1be")
 is_final_level = true
 level_time = 60
 
-[node name="BG" parent="." unique_id=1613092850 instance=ExtResource("3_quub3")]
+[node name="CityBackground" type="Parallax2D" parent="." unique_id=1072727977]
+scroll_offset = Vector2(665, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="CityBackground" unique_id=1830604587]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_81mjr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CityBackground" unique_id=838141349]
+position = Vector2(767.99994, -149.00002)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_81mjr")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CityBackground" unique_id=717471634]
+position = Vector2(1508.9999, 63)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_81mjr")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CityBackground" unique_id=287785977]
+position = Vector2(2368.0002, -186.99998)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_81mjr")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CityBackground" unique_id=800358662]
+position = Vector2(3272, -45.000015)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_81mjr")
+
+[node name="Sprite2D6" type="Sprite2D" parent="CityBackground" unique_id=306157340]
+position = Vector2(4183, -162)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_81mjr")
+
+[node name="Sprite2D7" type="Sprite2D" parent="CityBackground" unique_id=1373671461]
+position = Vector2(5273, -104)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_81mjr")
 
 [node name="UILayer" parent="." unique_id=478196975 instance=ExtResource("4_fpo5b")]
 
@@ -74,7 +108,6 @@ position = Vector2(-98.26318, 140.8)
 scale = Vector2(6.6800013, 1)
 polygon = PackedVector2Array(12, 11, 74, 39, 267.36523, -15, 458.98193, 149, 634.1316, -30, 766.6166, -36, 913.3232, 173, 1021, 119, 1154, 112, 1200, 110, 1306, 102, 1443, 60, 1584, 49, 1728, 33, 1960, -11, 2158, 430, -6, 264)
 
-[node name="WingReward" parent="." unique_id=42478789 instance=ExtResource("9_81mjr")]
-position = Vector2(4878, 23)
+[connection signal="stamina_changed" from="MousePlayer" to="." method="_on_mouse_player_stamina_changed"]
 
 [editable path="Deathzone"]

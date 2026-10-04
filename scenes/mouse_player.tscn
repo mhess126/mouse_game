@@ -105,7 +105,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vwmer")
 animation = &"riding"
 autoplay = "idle"
-frame_progress = 0.37373406
+frame_progress = 0.4739828
 
 [node name="WingSprite" type="Sprite2D" parent="Components" unique_id=877949541]
 visible = false

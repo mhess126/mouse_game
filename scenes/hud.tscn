@@ -1,14 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd7ng157b7fda"]
+[gd_scene format=3 uid="uid://cd7ng157b7fda"]
 
-[ext_resource type="Script" path="res://scripts/hud.gd" id="1_8dk1i"]
-[ext_resource type="FontFile" uid="uid://cx1m2pgcbcdye" path="res://assets/fonts/Kenney Pixel Square.ttf" id="1_63uee"]
+[ext_resource type="Script" uid="uid://cnnd3r711xvva" path="res://scripts/hud.gd" id="1_8dk1i"]
+[ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="2_5ysmq"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_qobd3"]
-font = ExtResource("1_63uee")
-outline_size = 5
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_lxesk"]
+font = ExtResource("2_5ysmq")
+font_size = 32
+font_color = Color(1, 0.8156863, 0.2627451, 1)
 
-[node name="HUD" type="Control"]
+[sub_resource type="Gradient" id="Gradient_6fi6k"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0.7082425, 0.7082423, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6fi6k"]
+gradient = SubResource("Gradient_6fi6k")
+
+[sub_resource type="Gradient" id="Gradient_5ysmq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uo2fv"]
+gradient = SubResource("Gradient_5ysmq")
+
+[node name="HUD" type="Control" unique_id=1205134746]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,16 +31,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8dk1i")
 
-[node name="TimeLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
+[node name="StaminaControl" type="Control" parent="." unique_id=571355738]
+anchors_preset = 0
+offset_left = 70.0
+offset_top = 89.0
+offset_right = 110.0
+offset_bottom = 129.0
+
+[node name="Stamina" type="Label" parent="StaminaControl" unique_id=983490262]
+layout_mode = 0
+offset_right = 68.0
 offset_bottom = 23.0
-grow_horizontal = 2
-text = "TIME: 9999"
-label_settings = SubResource("LabelSettings_qobd3")
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "Stamina:"
+label_settings = SubResource("LabelSettings_lxesk")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="StaminaControl" unique_id=268430320]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 64.0
+offset_bottom = 99.0
+scale = Vector2(5, 0.59)
+step = 0.3
+value = 10.0
+rounded = true
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_6fi6k")
+texture_progress = SubResource("GradientTexture2D_uo2fv")

@@ -1,8 +1,10 @@
 extends CharacterBody2D
 class_name Player
 
-@export var max_stamina = 100
-@export var pedal_stamina_cost = 20
+@export var max_stamina: float = 100.0
+@export var stamina_recharge_rate: float = 30.0
+@export var stamina_recharge_delay: float = 0.2
+@export var pedal_stamina_cost: float = 7.0
 @export var gravity = 400
 @export var jump_force = 140
 @export var speed = 400
@@ -20,18 +22,35 @@ class_name Player
 @onready var wing_sprite: Sprite2D = $Components/WingSprite
 @onready var dirt: CPUParticles2D = $Components/Dirt
 
-var active = true
-var jumps = 0
-var direction = 1.0
+signal stamina_changed
+
+var active: bool = true
+var jumps: int = 0
+var direction: float = 1.0
+var stamina: float = max_stamina
+var stamina_delay_timer: float = 0.0
 
 func _ready():
 	# Stick to the ground when rolling down slopes instead of hopping off
 	floor_snap_length = 8.0
 
+func use_stamina(amount: int) -> void:
+	stamina = max(stamina - amount, 0)
+	stamina_delay_timer = stamina_recharge_delay # Reset the delay clock
+	stamina_changed.emit()
+
+func _process(delta) -> void:
+	if stamina_delay_timer > 0:
+		stamina_delay_timer -= delta
+	else:
+		if stamina < max_stamina:
+			stamina = min(stamina + (stamina_recharge_rate * delta), max_stamina)
+			stamina_changed.emit()
 func _physics_process(delta):
 	# Capture pedal event and set timer
 	if Input.is_action_just_pressed("pedal"):
 		pedal_buffer_timer = pedal_buffer_duration
+		use_stamina(pedal_stamina_cost)
 	if pedal_buffer_timer > 0.0:
 		pedal_buffer_timer -= delta
 
@@ -74,7 +93,7 @@ func _physics_process(delta):
 		var pedaling = pedal_buffer_timer > 0.0
 		if pedaling:
 			dirt.emitting = true # configured for one-shot
-		if pedaling && velocity.x * direction < speed:
+		if pedaling && stamina > 0 && velocity.x * direction < speed:
 			velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
 		elif !rolling_downhill:
 			velocity.x = move_toward(velocity.x, 0, friction * delta)
@@ -92,7 +111,7 @@ func jump(force):
 func update_animations(_animation_direction):
 	if is_on_floor():
 		# peddling
-		if pedal_buffer_timer > 0.0:
+		if pedal_buffer_timer > 0.0 && stamina > 0.0:
 			animated_sprite.play("riding")
 		else:
 			animated_sprite.pause()

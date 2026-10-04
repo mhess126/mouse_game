@@ -32,39 +32,20 @@ func _ready():
 		#trap.connect("touched_player", _on_trap_touched_player)
 		trap.touched_player.connect(_on_trap_touched_player)
 	
-	for reward in rewards:
-		reward.touched_player.connect(_on_reward_touched_player)
+	for reward_item in rewards:
+		reward_item.touched_player.connect(_on_reward_touched_player)
 	
 	exit.body_entered.connect(_on_exit_body_entered)
 	death_zone.body_entered.connect(_on_deathzone_body_entered)
-	
-	time_left = level_time
-	hud.set_time_label(time_left)
-	
-	timer_node = Timer.new()
-	timer_node.name = "Level Timer"
-	timer_node.wait_time = 1
-	timer_node.timeout.connect(_on_level_timer_timeout)
-	add_child(timer_node)
-	timer_node.start()
+	hud.set_stamina_meter(player.stamina)
 
-func _on_level_timer_timeout():
-	if win == false:
-		time_left -= 1
-		hud.set_time_label(time_left)
-		if time_left < 0:
-			AudioPlayer.play_sfx("hurt")
-			reset_player()
-			time_left = level_time
-			hud.set_time_label(time_left)
-
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	elif Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 
-func _on_deathzone_body_entered(body):
+func _on_deathzone_body_entered(_body):
 	AudioPlayer.play_sfx("hurt")
 	reset_player()
 
@@ -91,3 +72,7 @@ func _on_exit_body_entered(body):
 				ui_layer.show_win_screen(true)
 			else:
 				get_tree().change_scene_to_packed(next_level)
+
+
+func _on_mouse_player_stamina_changed() -> void:
+	hud.set_stamina_meter(player.stamina)
