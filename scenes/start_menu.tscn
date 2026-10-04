@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="1_2praq"]
 [ext_resource type="Script" uid="uid://b40equhx1unfa" path="res://scripts/start_menu.gd" id="1_5qotc"]
-[ext_resource type="Texture2D" uid="uid://bkd4hd1ahwar2" path="res://assets/textures/bg/Green.png" id="2_v86g4"]
 [ext_resource type="FontFile" uid="uid://cx1m2pgcbcdye" path="res://assets/fonts/Kenney Pixel Square.ttf" id="3_mwvnb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rlico"]
@@ -23,7 +22,6 @@ grow_vertical = 2
 script = ExtResource("1_5qotc")
 
 [node name="BG" parent="." unique_id=338693473 instance=ExtResource("1_2praq")]
-bg_texture = ExtResource("2_v86g4")
 
 [node name="Title" type="Label" parent="." unique_id=1553453175]
 layout_mode = 0
