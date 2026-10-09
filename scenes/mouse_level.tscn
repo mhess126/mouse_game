@@ -101,12 +101,78 @@ antialiased = true
 texture = ExtResource("8_b7rbh")
 texture_scale = Vector2(4, 4)
 texture_rotation = -1.4922565
-polygon = PackedVector2Array(12, 11, 74, 39, 267.36523, -15, 458.98193, 149, 634.1316, -30, 766.6166, -36, 913.3232, 173, 1021, 119, 1154, 112, 1200, 110, 1306, 102, 1443, 60, 1584, 49, 1728, 33, 1960, -11, 2158, 430, -6, 264)
+polygon = PackedVector2Array(12, 11, 71.59627, 92.2, 268.30283, 92.2, 429.82974, 18.199997, 422.9435, 294.2, 461.71594, 294.2, 448.0932, 37.199997, 496.1471, 159.2, 741.9554, -222.8, 801.6859, 112.2, 837.6141, 121.2, 967.25476, -339.8, 951.5362, 211.2, 964.70984, 334.2, 1056.4763, 345.2, 1035.8176, -119.8, 1115.0092, 121.2, 1200, 110, 1439.8594, -537.8, 1443, 60, 1584, 49, 1728, 33, 1960, -11, 2158, 430, -6, 264)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=265275113]
 position = Vector2(-98.26318, 140.8)
 scale = Vector2(6.6800013, 1)
-polygon = PackedVector2Array(12, 11, 74, 39, 267.36523, -15, 458.98193, 149, 634.1316, -30, 766.6166, -36, 913.3232, 173, 1021, 119, 1154, 112, 1200, 110, 1306, 102, 1443, 60, 1584, 49, 1728, 33, 1960, -11, 2158, 430, -6, 264)
+polygon = PackedVector2Array(12, 11, 70.24896, 92.2, 267.85373, 95.2, 427.8836, 17.199997, 422.195, 291.2, 461.41653, 299.2, 446.5962, 36.199997, 495.69797, 152.2, 740.60815, -222.8, 801.2369, 114.2, 835.8177, 123.2, 967.1051, -338.8, 968.7518, 335.2, 1054.2308, 346.2, 1035.668, -126.8, 1114.4104, 120.2, 1201.6859, 103.2, 1438.9613, -538.8, 1443, 60, 1584, 49, 1728, 33, 1960, -11, 2158, 430, -6, 264)
+
+[node name="Second Level" type="StaticBody2D" parent="." unique_id=1447072090]
+material = SubResource("CanvasItemMaterial_lxesk")
+position = Vector2(0, -38)
+physics_material_override = SubResource("PhysicsMaterial_b7rbh")
+
+[node name="Polygon2D" type="Polygon2D" parent="Second Level" unique_id=1413306028]
+position = Vector2(2009, -2377)
+scale = Vector2(6.6800013, 1)
+color = Color(0.6292371, 0.40353835, 0.24883065, 1)
+antialiased = true
+texture = ExtResource("8_b7rbh")
+texture_scale = Vector2(4, 4)
+texture_rotation = -1.4922565
+polygon = PackedVector2Array(12, 11, 71.59627, 92.2, 268.30283, 92.2, 913.3232, 173, 1021, 119, 1140.5686, 713, 1481.1375, 1313, -6, 264)
+
+[node name="Float 1 Polygon" type="CollisionPolygon2D" parent="Second Level" unique_id=730640150]
+position = Vector2(-1476, -563.0001)
+scale = Vector2(6.6800013, 0.99999994)
+polygon = PackedVector2Array(1728, 33, 1875.8978, 73.00012, 1946.4067, -138.99988, 1887.5745, 262.00015)
+
+[node name="Float 2 Polygon" type="CollisionPolygon2D" parent="Second Level" unique_id=573344215]
+position = Vector2(199, -767)
+scale = Vector2(6.6800013, 0.99999994)
+polygon = PackedVector2Array(1728, 33, 1842.0654, -224, 1873.802, 262.00006)
+
+[node name="Float 1" type="Polygon2D" parent="Second Level" unique_id=1542556503]
+position = Vector2(5064, -2439.0002)
+scale = Vector2(6.6800013, 0.9076284)
+color = Color(0.6292371, 0.40353835, 0.24883065, 1)
+antialiased = true
+texture = ExtResource("8_b7rbh")
+texture_scale = Vector2(4, 4)
+texture_rotation = -1.4922565
+polygon = PackedVector2Array(747.0058, 2098.8767, 897.15546, 2144.0493, 972.15546, 1901.6594, 905.8381, 2362.2004)
+
+[node name="Float 2" type="Polygon2D" parent="Second Level" unique_id=2049076589]
+position = Vector2(6726, -2649.0002)
+scale = Vector2(6.6800013, 0.9076284)
+color = Color(0.6292371, 0.40353835, 0.24883065, 1)
+antialiased = true
+texture = ExtResource("8_b7rbh")
+texture_scale = Vector2(4, 4)
+texture_rotation = -1.4922565
+polygon = PackedVector2Array(747.0058, 2098.8767, 863.7722, 1826.7386, 896.2573, 2359.9966)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Second Level" unique_id=549476219]
+position = Vector2(2022, -2388)
+scale = Vector2(6.6800013, 1)
+polygon = PackedVector2Array(12, 11, 71.89567, 99.2, 267.85373, 95.2, 918.86206, 195, 1022.90393, 126, 1142.6644, 743, 1477.844, 1310, -6, 264)
+
+[node name="Game Controls" type="Control" parent="." unique_id=1310586563]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Game Controls" unique_id=1760973806]
+layout_mode = 0
+offset_left = 451.0
+offset_top = -129.0
+offset_right = 687.0
+offset_bottom = -28.0
+text = "Controls:
+Space to pedal
+\"J\" to Jump (not currently working)"
 
 [connection signal="stamina_changed" from="MousePlayer" to="." method="_on_mouse_player_stamina_changed"]
 
