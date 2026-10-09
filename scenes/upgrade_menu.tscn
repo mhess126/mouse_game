@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dunsorjcjxaqv"]
+
+[ext_resource type="Script" uid="uid://betvwuyen4dcc" path="res://scripts/upgrade_menu.gd" id="1_0e30j"]
+[ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="2_jkuc8"]
+[ext_resource type="FontFile" uid="uid://cx1m2pgcbcdye" path="res://assets/fonts/Kenney Pixel Square.ttf" id="3_6vqdt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rlico"]
+font = ExtResource("3_6vqdt")
+font_size = 160
+font_color = Color(0.835294, 0, 1, 1)
+outline_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[node name="Upgrade Menu" type="Control" unique_id=607911600]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0e30j")
+
+[node name="BG" parent="." unique_id=338693473 instance=ExtResource("2_jkuc8")]
+
+[node name="Title" type="Label" parent="." unique_id=1553453175]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 78.0
+offset_right = 1240.0
+offset_bottom = 318.0
+text = "Upgrade"
+label_settings = SubResource("LabelSettings_rlico")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Option A" type="Button" parent="." unique_id=1960354401]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 384.0
+offset_right = 416.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 40
+text = "Upgrade A
+"
+
+[node name="Option B" type="Button" parent="." unique_id=1250247483]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 384.0
+offset_right = 800.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 40
+text = "Upgrade B
+"
+
+[node name="Option C" type="Button" parent="." unique_id=754187789]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 384.0
+offset_right = 1184.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 40
+text = "Upgrade C"
