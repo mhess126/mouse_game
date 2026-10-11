@@ -84,7 +84,6 @@ size = Vector2(91, 119.53125)
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_8vnnm")
-max_jumps = 4
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=450145002]
 position = Vector2(-13, -137)

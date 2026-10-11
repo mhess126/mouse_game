@@ -1,11 +1,11 @@
 extends CharacterBody2D
 class_name Player
 
-@export var max_stamina: float = 500.0
+@export var max_stamina: float = 100.0
 @export var stamina_recharge_rate: float = 100.0
-@export var stamina_recharge_delay: float = 0.1
+@export var stamina_recharge_delay: float = 0.3
 @export var pedal_stamina_cost: float = 2.0
-@export var gravity = 400
+@export var gravity: float = 400.0
 @export var jump_force = 140
 @export var speed = 400
 @export var max_jumps = 2
@@ -37,7 +37,7 @@ func _ready():
 func use_stamina(amount: float) -> void:
 	stamina = max(stamina - amount, 0)
 	stamina_delay_timer = stamina_recharge_delay # Reset the delay clock
-	stamina_changed.emit()
+	stamina_changed.emit(stamina)
 
 func _process(delta) -> void:
 	if stamina_delay_timer > 0:
@@ -45,7 +45,8 @@ func _process(delta) -> void:
 	else:
 		if stamina < max_stamina:
 			stamina = min(stamina + (stamina_recharge_rate * delta), max_stamina)
-			stamina_changed.emit()
+			stamina_changed.emit(stamina)
+			
 func _physics_process(delta):
 	# Capture pedal event and set timer
 	if Input.is_action_just_pressed("pedal"):
@@ -56,7 +57,7 @@ func _physics_process(delta):
 
 	if is_on_floor()==false:
 		jumps = 0
-		velocity.y += gravity * delta
+		velocity.y += (gravity * delta)
 		if velocity.y > 500:
 			velocity.y = 500
 	else:

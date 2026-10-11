@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://1sfpdcin4md7"]
 
 [ext_resource type="Script" uid="uid://bwj30c85oibfg" path="res://scripts/ui_layer.gd" id="1_iwuh3"]
-[ext_resource type="PackedScene" uid="uid://cd7ng157b7fda" path="res://scenes/hud.tscn" id="1_qs1pu"]
-[ext_resource type="PackedScene" uid="uid://efjkwlytq0or" path="res://scenes/win_screen.tscn" id="2_7n4ll"]
+[ext_resource type="PackedScene" uid="uid://cd7ng157b7fda" path="res://scenes/huds/hud.tscn" id="1_qs1pu"]
+[ext_resource type="PackedScene" uid="uid://efjkwlytq0or" path="res://scenes/huds/win_screen.tscn" id="2_7n4ll"]
 
 [node name="UILayer" type="CanvasLayer" unique_id=57397846]
 script = ExtResource("1_iwuh3")

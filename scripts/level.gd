@@ -73,6 +73,6 @@ func _on_exit_body_entered(body):
 			else:
 				get_tree().change_scene_to_packed(next_level)
 
-
-func _on_mouse_player_stamina_changed() -> void:
-	hud.set_stamina_meter(player.stamina)
+func _on_player_stamina_changed(value: int) -> void:
+	hud.set_stamina_meter(value)
+	pass # Replace with function body.
