@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://co3bikfdq2b7o"]
+
+[ext_resource type="Script" uid="uid://dle5o7ble4e3j" path="res://scripts/menus/controls_menu.gd" id="1_ibk35"]
+[ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_755da"]
+
+[node name="ControlsMenu" type="Control" unique_id=607911600]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ibk35")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=996133075]
+layout_mode = 0
+offset_right = 1662.0
+offset_bottom = 1285.0
+color = Color(0, 0, 0, 0.54901963)
+metadata/_edit_use_anchors_ = true
+
+[node name="BackButton" type="Button" parent="." unique_id=1158574547]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 1088.0
+offset_right = 960.0
+offset_bottom = 1219.0
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 60
+text = "BACK
+"
+
+[node name="Title" type="Label" parent="." unique_id=2088910022]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 64.0
+offset_right = 1198.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 100
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="CanvasGroup3" type="CanvasGroup" parent="." unique_id=1309782157]
+position = Vector2(0, 64)
+
+[node name="GamePadControls2" type="Label" parent="CanvasGroup3" unique_id=622737766]
+offset_left = 672.0
+offset_top = 576.0
+offset_right = 992.0
+offset_bottom = 644.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 65
+text = "PEDAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GamePadControls4" type="Label" parent="CanvasGroup3" unique_id=1337378888]
+offset_left = 680.0
+offset_top = 384.0
+offset_right = 984.0
+offset_bottom = 452.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 65
+text = "JUMP"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GamePadControls3" type="Label" parent="CanvasGroup3" unique_id=6685568]
+offset_left = 672.0
+offset_top = 768.0
+offset_right = 992.0
+offset_bottom = 836.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 65
+text = "MOVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasGroup2" type="CanvasGroup" parent="." unique_id=1983213754]
+position = Vector2(0, 64)
+
+[node name="KeyboardControlsTitle" type="Label" parent="CanvasGroup2" unique_id=545739712]
+offset_left = 128.0
+offset_top = 216.0
+offset_right = 648.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 70
+text = "KEYBOARD"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="KeyboardControls" type="Label" parent="CanvasGroup2" unique_id=1747721749]
+custom_maximum_size = Vector2(575, 800)
+offset_left = 336.0
+offset_top = 384.0
+offset_right = 640.0
+offset_bottom = 448.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 40
+text = "J"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="KeyboardControls2" type="Label" parent="CanvasGroup2" unique_id=1022471965]
+custom_maximum_size = Vector2(575, 800)
+offset_left = 392.0
+offset_top = 576.0
+offset_right = 640.0
+offset_bottom = 640.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 40
+text = "Space Bar"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="KeyboardControls3" type="Label" parent="CanvasGroup2" unique_id=1000988219]
+custom_maximum_size = Vector2(575, 800)
+offset_left = 64.0
+offset_top = 768.0
+offset_right = 639.0
+offset_bottom = 832.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 40
+text = "Arrow Keys or \"A\" and \"D\""
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=572004535]
+position = Vector2(0, 64)
+
+[node name="GamePadControlsTitle" type="Label" parent="CanvasGroup" unique_id=1584510312]
+offset_left = 1024.0
+offset_top = 216.0
+offset_right = 1536.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 70
+text = "GAMEPAD"
+vertical_alignment = 2
+
+[node name="GamePadControls" type="Label" parent="CanvasGroup" unique_id=1664937797]
+offset_left = 1024.0
+offset_top = 384.0
+offset_right = 1536.0
+offset_bottom = 448.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 40
+text = "?????"
+vertical_alignment = 1
+
+[node name="GamePadControls2" type="Label" parent="CanvasGroup" unique_id=1911424156]
+offset_left = 1024.0
+offset_top = 576.0
+offset_right = 1656.0
+offset_bottom = 640.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 40
+text = "Sony Cross/Xbox A/Nintendo B"
+vertical_alignment = 1
+
+[node name="GamePadControls3" type="Label" parent="CanvasGroup" unique_id=1741716298]
+offset_left = 1024.0
+offset_top = 768.0
+offset_right = 1392.0
+offset_bottom = 832.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("3_755da")
+theme_override_font_sizes/font_size = 40
+text = "D-pad"
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

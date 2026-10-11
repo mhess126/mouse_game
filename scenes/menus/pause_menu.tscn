@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://caph2iwd2cwni"]
+
+[ext_resource type="Script" uid="uid://dbvn6qcia7n3c" path="res://scripts/menus/pause_menu.gd" id="1_gsnt3"]
+[ext_resource type="Texture2D" uid="uid://do21qnia3bmv8" path="res://assets/textures/bg/start-card.png" id="2_2wrho"]
+[ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_gh0u6"]
+
+[node name="PauseMenu" type="Control" unique_id=607911600]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_gsnt3")
+
+[node name="StartCard" type="Sprite2D" parent="." unique_id=1897627270]
+visible = false
+position = Vector2(823.99994, 633)
+scale = Vector2(0.49882358, 0.49882346)
+texture = ExtResource("2_2wrho")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1781033269]
+layout_mode = 0
+offset_left = -6.1035156e-05
+offset_top = -6.1035156e-05
+offset_right = 1647.0
+offset_bottom = 1273.0
+color = Color(1, 1, 1, 0.65882355)
+
+[node name="ResumeButton" type="Button" parent="." unique_id=576441493]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 576.0
+offset_right = 1120.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("3_gh0u6")
+theme_override_font_sizes/font_size = 80
+text = "RESUME"
+
+[node name="ControlsButton" type="Button" parent="." unique_id=895705028]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 768.0
+offset_right = 1120.0
+offset_bottom = 896.0
+theme_override_fonts/font = ExtResource("3_gh0u6")
+theme_override_font_sizes/font_size = 80
+text = "CONTROLS"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1158574547]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 1088.0
+offset_right = 960.0
+offset_bottom = 1219.0
+theme_override_fonts/font = ExtResource("3_gh0u6")
+theme_override_font_sizes/font_size = 60
+text = "QUIT"
+
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

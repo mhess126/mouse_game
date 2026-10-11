@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dunsorjcjxaqv"]
+
+[ext_resource type="Script" uid="uid://betvwuyen4dcc" path="res://scripts/menus/upgrade_menu.gd" id="1_8v7sf"]
+[ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="2_m3ndr"]
+[ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/(lv.1) junk pile 7.png" id="3_twu2v"]
+[ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="4_m6ayr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fcv5n"]
+font = ExtResource("4_m6ayr")
+font_size = 90
+
+[node name="Upgrade Menu" type="Control" unique_id=607911600]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8v7sf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1729204692]
+layout_mode = 0
+offset_right = 1278.0
+offset_bottom = 898.0
+color = Color(0.7176471, 0.36862746, 0.07058824, 1)
+
+[node name="BG" parent="." unique_id=338693473 instance=ExtResource("2_m3ndr")]
+
+[node name="(lv_1)JunkPile7" type="Sprite2D" parent="." unique_id=1036014019]
+position = Vector2(683.00006, 848.00006)
+scale = Vector2(0.6052941, 0.6052941)
+texture = ExtResource("3_twu2v")
+
+[node name="Title" type="Label" parent="." unique_id=1553453175]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 78.0
+offset_right = 1240.0
+offset_bottom = 318.0
+theme_override_fonts/font = ExtResource("4_m6ayr")
+text = "Upgrade"
+label_settings = SubResource("LabelSettings_fcv5n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Option A" type="Button" parent="." unique_id=1960354401]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 384.0
+offset_right = 416.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 40
+text = "Upgrade A
+"
+
+[node name="Option B" type="Button" parent="." unique_id=1250247483]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 384.0
+offset_right = 800.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 40
+text = "Upgrade B
+"
+
+[node name="Option C" type="Button" parent="." unique_id=754187789]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 384.0
+offset_right = 1184.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 40
+text = "Upgrade C"
