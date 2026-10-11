@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://u3deu4vjpi5q"]
 
 [ext_resource type="Script" uid="uid://btk5ab6ac1dmw" path="res://scripts/level.gd" id="1_iisft"]
-[ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/(lv.1) junk pile 7.png" id="2_xh687"]
+[ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/junk/level1/lv1_junk-pile7.png" id="2_xh687"]
 [ext_resource type="PackedScene" uid="uid://1sfpdcin4md7" path="res://scenes/ui_layer.tscn" id="3_lkfc3"]
 [ext_resource type="PackedScene" uid="uid://mwtkxlw36bis" path="res://scenes/deathzone.tscn" id="4_rq71n"]
 [ext_resource type="PackedScene" uid="uid://v1fiyp0l185j" path="res://scenes/start.tscn" id="5_2tofm"]

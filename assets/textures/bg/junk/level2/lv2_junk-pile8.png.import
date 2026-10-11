@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l8t4waq4dfw"
-path="res://.godot/imported/(lv.1) junk pile 7.png-e63cd5658e6f03b671512788aaa0b753.ctex"
+uid="uid://vy8txueegj6t"
+path="res://.godot/imported/lv2_junk-pile8.png-55f56933d4cbad64deb3df8c4b0a4743.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/bg/(lv.1) junk pile 7.png"
-dest_files=["res://.godot/imported/(lv.1) junk pile 7.png-e63cd5658e6f03b671512788aaa0b753.ctex"]
+source_file="res://assets/textures/bg/junk/level2/lv2_junk-pile8.png"
+dest_files=["res://.godot/imported/lv2_junk-pile8.png-55f56933d4cbad64deb3df8c4b0a4743.ctex"]
 
 [params]
 
