@@ -1,10 +1,10 @@
 extends CharacterBody2D
 class_name Player
 
-@export var max_stamina: float = 100.0
-@export var stamina_recharge_rate: float = 30.0
-@export var stamina_recharge_delay: float = 0.2
-@export var pedal_stamina_cost: float = 7.0
+@export var max_stamina: float = 500.0
+@export var stamina_recharge_rate: float = 100.0
+@export var stamina_recharge_delay: float = 0.1
+@export var pedal_stamina_cost: float = 2.0
 @export var gravity = 400
 @export var jump_force = 140
 @export var speed = 400

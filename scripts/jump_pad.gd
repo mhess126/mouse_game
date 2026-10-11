@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var jump_force = 300
+@export var jump_force = 250
 
 @onready var animated_sprite = $AnimatedSprite2D
 
