@@ -1,18 +1,30 @@
 [gd_scene format=3 uid="uid://figakeric4xe"]
 
 [ext_resource type="Script" uid="uid://b40equhx1unfa" path="res://scripts/menus/start_menu.gd" id="1_ifl8t"]
-[ext_resource type="Texture2D" uid="uid://do21qnia3bmv8" path="res://assets/textures/bg/start-card.png" id="2_mxv33"]
+[ext_resource type="Texture2D" uid="uid://s8t02vj84hae" path="res://assets/textures/bg/start_card/start-card-1.png" id="2_ckod1"]
+[ext_resource type="Texture2D" uid="uid://o0esiq2nye8" path="res://assets/textures/bg/start_card/start-card-2.png" id="3_pihdo"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_wc57o"]
+[ext_resource type="Texture2D" uid="uid://cmtifkkinntj8" path="res://assets/textures/bg/start_card/start-card-3.png" id="4_eba3y"]
+[ext_resource type="Texture2D" uid="uid://cjufpqoqmigsg" path="res://assets/textures/bg/start_card/start-card-4.png" id="5_kkacw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lxesk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_h61rw")
+"texture": ExtResource("2_ckod1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pihdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eba3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kkacw")
 }],
 "loop": 1,
 "name": &"start_background",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [node name="StartMenu" type="Control" unique_id=607911600]
@@ -23,14 +35,11 @@ size_flags_vertical = 4
 script = ExtResource("1_ifl8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2005663813]
-position = Vector2(-6.1035156e-05, -6.1035156e-05)
+position = Vector2(824.9999, 637.50006)
+scale = Vector2(0.50000006, 0.50000006)
 sprite_frames = SubResource("SpriteFrames_lxesk")
 animation = &"start_background"
-
-[node name="StartCard" type="Sprite2D" parent="." unique_id=1897627270]
-position = Vector2(823.99994, 633)
-scale = Vector2(0.49882358, 0.49882346)
-texture = ExtResource("2_mxv33")
+frame_progress = 0.8258951
 
 [node name="StartButton" type="Button" parent="." unique_id=576441493]
 layout_mode = 0
