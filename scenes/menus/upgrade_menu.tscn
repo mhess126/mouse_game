@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dunsorjcjxaqv"]
 
 [ext_resource type="Script" uid="uid://betvwuyen4dcc" path="res://scripts/menus/upgrade_menu.gd" id="1_8v7sf"]
-[ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="2_m3ndr"]
-[ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/(lv.1) junk pile 7.png" id="3_twu2v"]
+[ext_resource type="Texture2D" uid="uid://c1m160gdg8rd4" path="res://assets/textures/bg/junk/level1/lv1_junk-pile2.png" id="2_m3ndr"]
+[ext_resource type="Texture2D" uid="uid://ql7bbhe0uu7c" path="res://assets/textures/bg/junk/level1/lv1_junk-pile6.png" id="2_twu2v"]
+[ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/junk/level1/lv1_junk-pile7.png" id="3_twu2v"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="4_m6ayr"]
+[ext_resource type="Texture2D" uid="uid://b101kdbhn6a4n" path="res://assets/textures/bg/junk/level1/lv1_junk-pile3.png" id="4_twu2v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fcv5n"]
 font = ExtResource("4_m6ayr")
@@ -20,54 +22,76 @@ script = ExtResource("1_8v7sf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1729204692]
 layout_mode = 0
-offset_right = 1278.0
-offset_bottom = 898.0
-color = Color(0.7176471, 0.36862746, 0.07058824, 1)
+offset_right = 1657.0
+offset_bottom = 1278.0
+color = Color(0.68235296, 0.2784314, 0.05490196, 1)
 
-[node name="BG" parent="." unique_id=338693473 instance=ExtResource("2_m3ndr")]
+[node name="BackJunkPile" type="Sprite2D" parent="." unique_id=346709887]
+position = Vector2(1024, 416)
+scale = Vector2(0.76460785, 0.7646078)
+texture = ExtResource("2_twu2v")
 
-[node name="(lv_1)JunkPile7" type="Sprite2D" parent="." unique_id=1036014019]
-position = Vector2(683.00006, 848.00006)
-scale = Vector2(0.6052941, 0.6052941)
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=313934566]
+layout_mode = 0
+offset_right = 1650.0
+offset_bottom = 1280.0
+color = Color(0.68235296, 0.2784314, 0.05490196, 0.39215687)
+
+[node name="MidJunkPile" type="Sprite2D" parent="." unique_id=1036014019]
+position = Vector2(232, 984.00006)
+scale = Vector2(0.32546565, 0.32546565)
 texture = ExtResource("3_twu2v")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=774468848]
+layout_mode = 0
+offset_top = 6.1035156e-05
+offset_right = 1650.0
+offset_bottom = 1280.0
+color = Color(0.68235296, 0.2784314, 0.05490196, 0.27450982)
+
+[node name="FrontJunk1" type="Sprite2D" parent="." unique_id=2126609924]
+position = Vector2(1736.0001, 1160)
+scale = Vector2(0.33465698, 0.33465686)
+texture = ExtResource("2_m3ndr")
+
+[node name="FrontJunk2" type="Sprite2D" parent="." unique_id=2092163238]
+position = Vector2(976, 1360)
+scale = Vector2(0.42029417, 0.42029408)
+texture = ExtResource("4_twu2v")
 
 [node name="Title" type="Label" parent="." unique_id=1553453175]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 78.0
-offset_right = 1240.0
-offset_bottom = 318.0
+offset_left = 64.0
+offset_top = 120.0
+offset_right = 1600.0
+offset_bottom = 360.0
 theme_override_fonts/font = ExtResource("4_m6ayr")
-text = "Upgrade"
+text = "Select an Upgrade"
 label_settings = SubResource("LabelSettings_fcv5n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Option A" type="Button" parent="." unique_id=1960354401]
+[node name="Wing" type="Button" parent="." unique_id=1960354401]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 384.0
-offset_right = 416.0
-offset_bottom = 512.0
+offset_left = 256.0
+offset_top = 576.0
+offset_right = 768.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("4_m6ayr")
 theme_override_font_sizes/font_size = 40
-text = "Upgrade A
+text = "Upgrade Wing
 "
 
-[node name="Option B" type="Button" parent="." unique_id=1250247483]
+[node name="Propeller" type="Button" parent="." unique_id=1250247483]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 384.0
-offset_right = 800.0
-offset_bottom = 512.0
+offset_left = 896.0
+offset_top = 576.0
+offset_right = 1408.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("4_m6ayr")
 theme_override_font_sizes/font_size = 40
-text = "Upgrade B
+text = "Upgrade Propeller
 "
 
-[node name="Option C" type="Button" parent="." unique_id=754187789]
-layout_mode = 0
-offset_left = 864.0
-offset_top = 384.0
-offset_right = 1184.0
-offset_bottom = 512.0
-theme_override_font_sizes/font_size = 40
-text = "Upgrade C"
+[connection signal="pressed" from="Wing" to="." method="_on_wing_upgrade_pressed"]
+[connection signal="pressed" from="Propeller" to="." method="_on_propeller_upgrade_pressed"]
