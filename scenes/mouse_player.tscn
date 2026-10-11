@@ -113,18 +113,36 @@ texture = ExtResource("3_r8eo0")
 flip_h = true
 
 [node name="Dirt" type="CPUParticles2D" parent="Components" unique_id=967214948]
+show_behind_parent = true
+z_index = -10
+z_as_relative = false
 position = Vector2(-54, 203)
 emitting = false
-amount = 12
+amount = 3
 texture = SubResource("GradientTexture2D_lxesk")
-lifetime = 0.6
+lifetime = 0.09
 one_shot = true
-speed_scale = 20.0
-explosiveness = 0.3
+speed_scale = 2.37
+explosiveness = 0.1
+randomness = 0.3
 direction = Vector2(-1, 0.45)
-spread = 49.01
-initial_velocity_min = 257.43
-initial_velocity_max = 257.43
+spread = 23.38
+initial_velocity_min = 120.74
+initial_velocity_max = 294.58
+angular_velocity_min = 140.43
+angular_velocity_max = 140.43
+linear_accel_min = -100.0
+linear_accel_max = -7.43
+radial_accel_min = -100.0
+radial_accel_max = 13.62
+damping_min = 21.981
+damping_max = 30.34
+angle_min = -595.2
+angle_max = -532.8
+scale_amount_min = 0.1
+color = Color(0.6039216, 0.49411765, 0, 1)
+hue_variation_min = -0.67
+hue_variation_max = 0.64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971819209]
 position = Vector2(0.5, -65)

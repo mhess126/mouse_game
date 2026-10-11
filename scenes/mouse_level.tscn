@@ -89,6 +89,7 @@ position = Vector2(506, 77)
 max_jumps = 0
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1866060494]
+visible = false
 material = SubResource("CanvasItemMaterial_lxesk")
 position = Vector2(0, -38)
 physics_material_override = SubResource("PhysicsMaterial_b7rbh")

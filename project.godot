@@ -15,7 +15,7 @@ ss2d/version="3.3.2"
 [application]
 
 config/name="MouseGame"
-run/main_scene="uid://figakeric4xe"
+run/main_scene="uid://dj3yhrexyqs0l"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://bnex267md207j"
 

@@ -34,7 +34,7 @@ func _ready():
 	# Stick to the ground when rolling down slopes instead of hopping off
 	floor_snap_length = 8.0
 
-func use_stamina(amount: int) -> void:
+func use_stamina(amount: float) -> void:
 	stamina = max(stamina - amount, 0)
 	stamina_delay_timer = stamina_recharge_delay # Reset the delay clock
 	stamina_changed.emit()
