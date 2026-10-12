@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cw4yx25eq4tjv"]
+
+[ext_resource type="Script" uid="uid://cu0p5y4kbwiio" path="res://scripts/start_sequence/opening_text.gd" id="1_e3622"]
+[ext_resource type="Texture2D" uid="uid://c38jopml2fvpb" path="res://assets/textures/other/sparrow-1.png" id="2_e3622"]
+[ext_resource type="PackedScene" uid="uid://dc5dahyd5wimn" path="res://scenes/start_sequence/blimp_on_horizon.tscn" id="2_ykqun"]
+[ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_srs8t"]
+[ext_resource type="StyleBox" uid="uid://s6g21aq01v7m" path="res://styles/basic_button.tres" id="4_ykqun"]
+[ext_resource type="StyleBox" uid="uid://btm3ema7fwmck" path="res://styles/basic_button_pressed.tres" id="5_srs8t"]
+[ext_resource type="StyleBox" uid="uid://gie1hiu28efk" path="res://styles/basic_button_hover.tres" id="6_ykqun"]
+
+[sub_resource type="Gradient" id="Gradient_6j8os"]
+offsets = PackedFloat32Array(0.2696456, 0.8798151)
+colors = PackedColorArray(0.39607844, 0.78431374, 1, 0.9019608, 1, 1, 1, 0.50980395)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ykqun"]
+gradient = SubResource("Gradient_6j8os")
+
+[node name="OpeningText1" type="Control" unique_id=607911600]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_e3622")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=896240838]
+layout_mode = 0
+offset_right = 1672.0
+offset_bottom = 1300.0
+
+[node name="BlimpOnHorizon2" parent="." unique_id=1331279695 instance=ExtResource("2_ykqun")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = 816.0
+offset_top = 688.0
+offset_right = 816.0
+offset_bottom = 688.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.60000026, 0.60000026)
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2053624371]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1275.0
+offset_right = 1274.2961
+offset_bottom = 2936.0
+rotation = -1.5707964
+texture = SubResource("GradientTexture2D_ykqun")
+
+[node name="Sparrow1" type="Sprite2D" parent="." unique_id=1431536490]
+position = Vector2(1480, 608)
+texture = ExtResource("2_e3622")
+
+[node name="Paragraph1" type="RichTextLabel" parent="." unique_id=2038339028]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 1600.0
+offset_bottom = 244.0555
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_srs8t")
+theme_override_font_sizes/normal_font_size = 60
+text = "As far as Juliette was concerned, the sparrows of the junkyard were her family."
+
+[node name="Paragraph2" type="RichTextLabel" parent="." unique_id=1067367462]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 258.00024
+offset_right = 1384.0
+offset_bottom = 1122.441
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("3_srs8t")
+theme_override_font_sizes/normal_font_size = 50
+text = "Her earliest memory is of being ushered into a broken TV while an eagle scoured overhead, huddling in fear with these little birds who had decided to help her. They'd introduced her to the junkyard's management: an ancient one-eyed raccoon who handled all trade between scavengers, who she
+ had been too scared to approach all by herself. They taught her to recognise the sounds of the trucks that brought the tastiest food, and which ones might unload the most interesting treasures. "
+
+[node name="Paragraph3" type="RichTextLabel" parent="." unique_id=348873409]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 864.0
+offset_right = 1480.0
+offset_bottom = 1248.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("3_srs8t")
+theme_override_font_sizes/normal_font_size = 50
+text = "The one lesson she couldn't seem to learn was how to fly. She understood the mechanics and technique, but she seemed to lack some very important anatomy. Her family loved her with or without wings, but she
+was growing tired of pretending that she wasn't
+missing out...."
+
+[node name="NextButton" type="Button" parent="." unique_id=4458019]
+layout_mode = 0
+offset_left = 1320.0
+offset_top = 1072.0
+offset_right = 1600.0
+offset_bottom = 1216.0
+theme_override_fonts/font = ExtResource("3_srs8t")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_ykqun")
+theme_override_styles/pressed = ExtResource("5_srs8t")
+theme_override_styles/hover = ExtResource("6_ykqun")
+text = "NEXT"
+
+[connection signal="pressed" from="NextButton" to="." method="_go_to_scene_2"]

@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dle5o7ble4e3j" path="res://scripts/menus/controls_menu.gd" id="1_ibk35"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_755da"]
+[ext_resource type="StyleBox" uid="uid://s6g21aq01v7m" path="res://styles/basic_button.tres" id="3_lgwst"]
+[ext_resource type="StyleBox" uid="uid://btm3ema7fwmck" path="res://styles/basic_button_pressed.tres" id="4_8vgq0"]
+[ext_resource type="StyleBox" uid="uid://gie1hiu28efk" path="res://styles/basic_button_hover.tres" id="5_01dbf"]
 
 [node name="ControlsMenu" type="Control" unique_id=607911600]
 layout_mode = 3
@@ -29,6 +32,9 @@ offset_right = 960.0
 offset_bottom = 1219.0
 theme_override_fonts/font = ExtResource("3_755da")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_lgwst")
+theme_override_styles/pressed = ExtResource("4_8vgq0")
+theme_override_styles/hover = ExtResource("5_01dbf")
 text = "BACK
 "
 

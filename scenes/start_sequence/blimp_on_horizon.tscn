@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dc5dahyd5wimn"]
+
+[ext_resource type="Texture2D" uid="uid://cfuh1ct7ml6vm" path="res://assets/textures/bg/junk/level2/lv2_junk-pile6.png" id="1_cfiyl"]
+[ext_resource type="Texture2D" uid="uid://b5ledp8sfpftw" path="res://assets/textures/bg/junk/level2/lv2_junk-pile3.png" id="2_hob2p"]
+[ext_resource type="Texture2D" uid="uid://dt4vsek1uyg0u" path="res://assets/textures/other/blimp.png" id="2_qap5o"]
+[ext_resource type="Texture2D" uid="uid://b1l06wqgtdetk" path="res://assets/textures/bg/junk/level2/lv2_junk-pile1.png" id="3_qacub"]
+
+[node name="BlimpOnHorizon" type="Control" unique_id=1331279695]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lv2JunkPile6" type="Sprite2D" parent="." unique_id=1633329894]
+position = Vector2(1400, 864)
+scale = Vector2(0.41470593, 0.41470593)
+texture = ExtResource("1_cfiyl")
+
+[node name="Lv2JunkPile3" type="Sprite2D" parent="." unique_id=677055960]
+position = Vector2(455.99994, 952)
+scale = Vector2(0.39960787, 0.39960784)
+texture = ExtResource("2_hob2p")
+
+[node name="Lv2JunkPile1" type="Sprite2D" parent="." unique_id=248545223]
+position = Vector2(760, 912)
+scale = Vector2(0.37205887, 0.37205884)
+texture = ExtResource("3_qacub")
+
+[node name="Blimp" type="Sprite2D" parent="." unique_id=1190964343]
+position = Vector2(1416.0001, 240.00002)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("2_qap5o")

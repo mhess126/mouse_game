@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://flqqeln77ykd"]
+
+[ext_resource type="Script" uid="uid://cu0p5y4kbwiio" path="res://scripts/start_sequence/opening_text.gd" id="1_pcjkd"]
+[ext_resource type="PackedScene" uid="uid://dc5dahyd5wimn" path="res://scenes/start_sequence/blimp_on_horizon.tscn" id="2_50ba6"]
+[ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_50ba6"]
+[ext_resource type="StyleBox" uid="uid://s6g21aq01v7m" path="res://styles/basic_button.tres" id="4_gu84i"]
+[ext_resource type="StyleBox" uid="uid://btm3ema7fwmck" path="res://styles/basic_button_pressed.tres" id="5_0nax8"]
+[ext_resource type="Texture2D" uid="uid://chkb2gycm06pq" path="res://assets/textures/other/sparrow-2.png" id="5_nh5nj"]
+[ext_resource type="StyleBox" uid="uid://gie1hiu28efk" path="res://styles/basic_button_hover.tres" id="5_pcjkd"]
+
+[sub_resource type="Gradient" id="Gradient_50ba6"]
+offsets = PackedFloat32Array(0.2696456, 0.8798151)
+colors = PackedColorArray(0.39607844, 0.78431374, 1, 0.6666667, 1, 1, 1, 0.50980395)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pcjkd"]
+gradient = SubResource("Gradient_50ba6")
+
+[node name="OpeningText2" type="Control" unique_id=607911600]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_pcjkd")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=41810611]
+layout_mode = 0
+offset_right = 1672.0
+offset_bottom = 1300.0
+
+[node name="BlimpOnHorizon" parent="." unique_id=1331279695 instance=ExtResource("2_50ba6")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = 648.0
+offset_top = 656.0
+offset_right = 648.0
+offset_bottom = 656.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.60000026, 0.60000026)
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1342290101]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1275.0
+offset_right = 1274.2961
+offset_bottom = 2936.0
+rotation = -1.5707964
+texture = SubResource("GradientTexture2D_pcjkd")
+
+[node name="Paragraph1" type="RichTextLabel" parent="." unique_id=1067367462]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 96.0
+offset_right = 1536.0
+offset_bottom = 288.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("3_50ba6")
+theme_override_font_sizes/normal_font_size = 50
+text = "When the leaves began to change around her, she knew the worst time of year was coming: "
+
+[node name="MigrationPull" type="RichTextLabel" parent="." unique_id=957049361]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 736.0
+offset_bottom = 328.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 3
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("3_50ba6")
+theme_override_font_sizes/normal_font_size = 50
+text = "migration."
+
+[node name="Paragraph2" type="RichTextLabel" parent="." unique_id=791481813]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 360.0
+offset_right = 1600.0
+offset_bottom = 776.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("3_50ba6")
+theme_override_font_sizes/normal_font_size = 50
+text = "					 	 For four months she had to fend for herself in
+						 the junkyard and patiently wait for her family to return. They spoke of the beautiful sights down south: junkyards right on the shore of the ocean, landfills up in beautiful hills, some with the most interesting treasures her eyes lit up hearing the stories."
+
+[node name="Paragraph3" type="RichTextLabel" parent="." unique_id=348873409]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 768.0
+offset_right = 1352.0
+offset_bottom = 1048.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("3_50ba6")
+theme_override_font_sizes/normal_font_size = 50
+text = "Last migration she had tried to see the joy in having some alone time to tinker with her inventions uninterrupted... but the winter was cold and lonely...."
+
+[node name="NextButton" type="Button" parent="." unique_id=4458019]
+layout_mode = 0
+offset_left = 1320.0
+offset_top = 1072.0
+offset_right = 1600.0
+offset_bottom = 1216.0
+theme_override_fonts/font = ExtResource("3_50ba6")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_gu84i")
+theme_override_styles/pressed = ExtResource("5_0nax8")
+theme_override_styles/hover = ExtResource("5_pcjkd")
+text = "NEXT"
+
+[node name="BackButton" type="Button" parent="." unique_id=1728018958]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 1072.0
+offset_right = 344.0
+offset_bottom = 1216.0
+theme_override_fonts/font = ExtResource("3_50ba6")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_gu84i")
+theme_override_styles/pressed = ExtResource("5_0nax8")
+theme_override_styles/hover = ExtResource("5_pcjkd")
+text = "BACK"
+
+[node name="Sparrow2" type="Sprite2D" parent="." unique_id=804579323]
+position = Vector2(240, 256)
+texture = ExtResource("5_nh5nj")
+
+[connection signal="pressed" from="NextButton" to="." method="_go_to_scene_3"]
+[connection signal="pressed" from="BackButton" to="." method="_go_to_scene_1"]

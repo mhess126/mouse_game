@@ -4,22 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://do21qnia3bmv8" path="res://assets/textures/bg/start-card.png" id="2_2wrho"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_gh0u6"]
 [ext_resource type="Texture2D" uid="uid://daagidph73jk7" path="res://assets/textures/menus/buttons/Controls button.png" id="4_2wrho"]
+[ext_resource type="StyleBox" uid="uid://s6g21aq01v7m" path="res://styles/basic_button.tres" id="4_xiui8"]
+[ext_resource type="StyleBox" uid="uid://btm3ema7fwmck" path="res://styles/basic_button_pressed.tres" id="5_dgi6y"]
 [ext_resource type="Texture2D" uid="uid://bnqnkfggvkhte" path="res://assets/textures/menus/buttons/Quit button.png" id="5_eyfc8"]
+[ext_resource type="StyleBox" uid="uid://gie1hiu28efk" path="res://styles/basic_button_hover.tres" id="5_gqhbq"]
 [ext_resource type="Texture2D" uid="uid://vu63pwh12iev" path="res://assets/textures/menus/buttons/Resume button.png" id="6_xiui8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pihdo"]
-bg_color = Color(0, 0, 0, 0.39215687)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wrho"]
-bg_color = Color(0, 0, 0, 0.5882353)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [node name="PauseMenu" type="Control" unique_id=607911600]
 layout_mode = 3
@@ -50,8 +39,9 @@ offset_right = 1216.0
 offset_bottom = 704.0
 theme_override_fonts/font = ExtResource("3_gh0u6")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_pihdo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2wrho")
+theme_override_styles/normal = ExtResource("4_xiui8")
+theme_override_styles/pressed = ExtResource("5_dgi6y")
+theme_override_styles/hover = ExtResource("5_gqhbq")
 
 [node name="ControlsButton" type="Button" parent="." unique_id=450667840]
 layout_mode = 0
@@ -61,8 +51,9 @@ offset_right = 1216.0
 offset_bottom = 960.0
 theme_override_fonts/font = ExtResource("3_gh0u6")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_pihdo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2wrho")
+theme_override_styles/normal = ExtResource("4_xiui8")
+theme_override_styles/pressed = ExtResource("5_dgi6y")
+theme_override_styles/hover = ExtResource("5_gqhbq")
 
 [node name="QuitButton" type="Button" parent="." unique_id=363687121]
 layout_mode = 0
@@ -72,8 +63,9 @@ offset_right = 1088.0
 offset_bottom = 1216.0
 theme_override_fonts/font = ExtResource("3_gh0u6")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_pihdo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2wrho")
+theme_override_styles/normal = ExtResource("4_xiui8")
+theme_override_styles/pressed = ExtResource("5_dgi6y")
+theme_override_styles/hover = ExtResource("5_gqhbq")
 
 [node name="ControlsButtonImage" type="Sprite2D" parent="." unique_id=1967638464]
 position = Vector2(805, 856)

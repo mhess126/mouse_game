@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/junk/level1/lv1_junk-pile7.png" id="3_twu2v"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="4_m6ayr"]
 [ext_resource type="Texture2D" uid="uid://b101kdbhn6a4n" path="res://assets/textures/bg/junk/level1/lv1_junk-pile3.png" id="4_twu2v"]
+[ext_resource type="StyleBox" uid="uid://s6g21aq01v7m" path="res://styles/basic_button.tres" id="7_l20aj"]
 [ext_resource type="Texture2D" uid="uid://citdea6lhmh3a" path="res://assets/textures/menus/upgrade_buttons/wings/frame_07.png" id="7_twv5k"]
+[ext_resource type="StyleBox" uid="uid://gie1hiu28efk" path="res://styles/basic_button_hover.tres" id="8_50ams"]
 [ext_resource type="Texture2D" uid="uid://c8vkw4op1ueup" path="res://assets/textures/menus/upgrade_buttons/wings/frame_08.png" id="8_aq2vk"]
+[ext_resource type="StyleBox" uid="uid://btm3ema7fwmck" path="res://styles/basic_button_pressed.tres" id="8_ioe8x"]
 [ext_resource type="Texture2D" uid="uid://d2h140b4r33jl" path="res://assets/textures/menus/upgrade_buttons/wings/frame_09.png" id="9_l20aj"]
 [ext_resource type="Texture2D" uid="uid://t7vgj8nt5y7p" path="res://assets/textures/menus/upgrade_text/Untitled_Artwork-1.png" id="9_s4m3q"]
 [ext_resource type="Texture2D" uid="uid://y52x5q65oxod" path="res://assets/textures/menus/upgrade_text/Untitled_Artwork-2.png" id="10_7qrl8"]
@@ -33,34 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://diew2wp52dv0j" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_10.png" id="28_vurla"]
 [ext_resource type="Texture2D" uid="uid://bns62tywhm2ak" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_11.png" id="29_crps8"]
 [ext_resource type="Texture2D" uid="uid://dr6kkp2p0jjq3" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_12.png" id="30_rscnx"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4je07"]
-bg_color = Color(0, 0, 0, 0.39215687)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyr6b"]
-bg_color = Color(0, 0, 0, 0.5882353)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o65a4"]
-bg_color = Color(0, 0, 0, 0.39215687)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4m3q"]
-bg_color = Color(0, 0, 0, 0.5882353)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkg4p"]
 animations = [{
@@ -223,8 +198,9 @@ offset_right = 768.0
 offset_bottom = 832.0
 theme_override_fonts/font = ExtResource("4_m6ayr")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_4je07")
-theme_override_styles/hover = SubResource("StyleBoxFlat_kyr6b")
+theme_override_styles/normal = ExtResource("7_l20aj")
+theme_override_styles/pressed = ExtResource("8_ioe8x")
+theme_override_styles/hover = ExtResource("8_50ams")
 
 [node name="PropellerButton" type="Button" parent="." unique_id=1250247483]
 layout_mode = 0
@@ -234,8 +210,9 @@ offset_right = 1408.0
 offset_bottom = 832.0
 theme_override_fonts/font = ExtResource("4_m6ayr")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_o65a4")
-theme_override_styles/hover = SubResource("StyleBoxFlat_s4m3q")
+theme_override_styles/normal = ExtResource("7_l20aj")
+theme_override_styles/pressed = ExtResource("8_ioe8x")
+theme_override_styles/hover = ExtResource("8_50ams")
 
 [node name="WingImage" type="AnimatedSprite2D" parent="." unique_id=1560982787]
 position = Vector2(443, 549)
