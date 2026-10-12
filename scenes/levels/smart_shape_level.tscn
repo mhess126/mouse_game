@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="17_vta3k"]
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="18_3n8i3"]
 [ext_resource type="PackedScene" uid="uid://bfi3wl3ecmvan" path="res://scenes/features/jump_pad.tscn" id="19_pe55e"]
+[ext_resource type="PackedScene" uid="uid://bairj4jvk30c0" path="res://scenes/wing_reward.tscn" id="20_43lt7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fni71"]
 size = Vector2(22655, 400)
@@ -321,6 +322,9 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
 [node name="JumpPad" parent="Features" unique_id=533466927 instance=ExtResource("19_pe55e")]
 position = Vector2(759, -1044)
+
+[node name="WingReward" parent="." unique_id=42478789 instance=ExtResource("20_43lt7")]
+position = Vector2(516, -1130)
 
 [connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]
 

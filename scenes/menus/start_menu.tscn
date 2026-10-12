@@ -42,25 +42,36 @@ animation = &"start_background"
 autoplay = "start_background"
 frame_progress = 0.8258951
 
-[node name="StartButton" type="Button" parent="." unique_id=576441493]
+[node name="StartQuitButtons" type="Sprite2D" parent="." unique_id=1009118580]
+position = Vector2(832, 848.00006)
+scale = Vector2(0.40721485, 0.4072148)
+texture = ExtResource("7_pihdo")
+
+[node name="StartButtonOverlay" type="Button" parent="." unique_id=751345531]
 layout_mode = 0
-offset_left = 544.0
-offset_top = 576.0
-offset_right = 1120.0
-offset_bottom = 704.0
+offset_left = 766.3467
+offset_top = 684.8784
+offset_right = 965.52515
+offset_bottom = 829.0972
+rotation = -0.2068842
+theme = SubResource("Theme_eba3y")
 theme_override_fonts/font = ExtResource("3_wc57o")
 theme_override_font_sizes/font_size = 80
-text = "START"
+theme_override_styles/normal = SubResource("StyleBoxFlat_kkacw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gmtu0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fnyec")
 
-[node name="QuitButton" type="Button" parent="." unique_id=1158574547]
+[node name="QuitButtonOverlay" type="Button" parent="." unique_id=605487411]
 layout_mode = 0
 offset_left = 704.0
-offset_top = 768.0
-offset_right = 960.0
-offset_bottom = 899.0
+offset_top = 912.0
+offset_right = 888.0
+offset_bottom = 1032.0
+theme = SubResource("Theme_pihdo")
 theme_override_fonts/font = ExtResource("3_wc57o")
 theme_override_font_sizes/font_size = 60
-text = "QUIT"
+theme_override_styles/normal = SubResource("StyleBoxFlat_gsnt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eba3y")
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="StartButtonOverlay" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButtonOverlay" to="." method="_on_quit_button_pressed"]

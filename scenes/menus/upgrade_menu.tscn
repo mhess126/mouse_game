@@ -6,10 +6,56 @@
 [ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/junk/level1/lv1_junk-pile7.png" id="3_twu2v"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="4_m6ayr"]
 [ext_resource type="Texture2D" uid="uid://b101kdbhn6a4n" path="res://assets/textures/bg/junk/level1/lv1_junk-pile3.png" id="4_twu2v"]
+[ext_resource type="Texture2D" uid="uid://bdsyu3qbws2vx" path="res://assets/textures/player/wings_only.png" id="7_kyr6b"]
+[ext_resource type="Texture2D" uid="uid://cbmeny8mv6tk8" path="res://assets/textures/player/prop_only_slow/frame_5.png" id="8_4je07"]
+[ext_resource type="Texture2D" uid="uid://t7vgj8nt5y7p" path="res://assets/textures/menus/upgrade_text/Untitled_Artwork-1.png" id="9_s4m3q"]
+[ext_resource type="Texture2D" uid="uid://y52x5q65oxod" path="res://assets/textures/menus/upgrade_text/Untitled_Artwork-2.png" id="10_7qrl8"]
+[ext_resource type="Texture2D" uid="uid://2xepj3ig64bp" path="res://assets/textures/menus/upgrade_text/Untitled_Artwork-3.png" id="11_xbke2"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_fcv5n"]
-font = ExtResource("4_m6ayr")
-font_size = 90
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4je07"]
+bg_color = Color(0, 0, 0, 0.39215687)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyr6b"]
+bg_color = Color(0, 0, 0, 0.5882353)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o65a4"]
+bg_color = Color(0, 0, 0, 0.39215687)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4m3q"]
+bg_color = Color(0, 0, 0, 0.5882353)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3xr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_s4m3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7qrl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xbke2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Upgrade Menu" type="Control" unique_id=607911600]
 layout_mode = 3
@@ -59,39 +105,43 @@ position = Vector2(976, 1360)
 scale = Vector2(0.42029417, 0.42029408)
 texture = ExtResource("4_twu2v")
 
-[node name="Title" type="Label" parent="." unique_id=1553453175]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 120.0
-offset_right = 1600.0
-offset_bottom = 360.0
-theme_override_fonts/font = ExtResource("4_m6ayr")
-text = "Select an Upgrade"
-label_settings = SubResource("LabelSettings_fcv5n")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Wing" type="Button" parent="." unique_id=1960354401]
+[node name="WingButton" type="Button" parent="." unique_id=1960354401]
 layout_mode = 0
 offset_left = 256.0
-offset_top = 576.0
+offset_top = 448.0
 offset_right = 768.0
-offset_bottom = 704.0
+offset_bottom = 832.0
 theme_override_fonts/font = ExtResource("4_m6ayr")
 theme_override_font_sizes/font_size = 40
-text = "Upgrade Wing
-"
+theme_override_styles/normal = SubResource("StyleBoxFlat_4je07")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kyr6b")
 
-[node name="Propeller" type="Button" parent="." unique_id=1250247483]
+[node name="PropellerButton" type="Button" parent="." unique_id=1250247483]
 layout_mode = 0
 offset_left = 896.0
-offset_top = 576.0
+offset_top = 448.0
 offset_right = 1408.0
-offset_bottom = 704.0
+offset_bottom = 832.0
 theme_override_fonts/font = ExtResource("4_m6ayr")
 theme_override_font_sizes/font_size = 40
-text = "Upgrade Propeller
-"
+theme_override_styles/normal = SubResource("StyleBoxFlat_o65a4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4m3q")
 
-[connection signal="pressed" from="Wing" to="." method="_on_wing_upgrade_pressed"]
-[connection signal="pressed" from="Propeller" to="." method="_on_propeller_upgrade_pressed"]
+[node name="WingImage" type="Sprite2D" parent="." unique_id=1447572459]
+position = Vector2(520.00006, 488)
+scale = Vector2(0.9697266, 0.9697266)
+texture = ExtResource("7_kyr6b")
+
+[node name="PropellerImage" type="Sprite2D" parent="." unique_id=100010412]
+position = Vector2(952, 584)
+texture = ExtResource("8_4je07")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2112266100]
+position = Vector2(833.00006, 172)
+scale = Vector2(0.3532207, 0.3532207)
+sprite_frames = SubResource("SpriteFrames_p3xr0")
+autoplay = "default"
+frame_progress = 0.78913766
+
+[connection signal="pressed" from="WingButton" to="." method="_on_wing_upgrade_pressed"]
+[connection signal="pressed" from="PropellerButton" to="." method="_on_propeller_upgrade_pressed"]
