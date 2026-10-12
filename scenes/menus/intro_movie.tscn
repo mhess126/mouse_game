@@ -90,6 +90,60 @@ animations = [{
 "texture": ExtResource("17_2eaxx")
 }, {
 "duration": 1.0,
+"texture": ExtResource("12_leir1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b4muu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7uc7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b6o2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2d5yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2eaxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_leir1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b4muu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7uc7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b6o2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2d5yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2eaxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_leir1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b4muu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7uc7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b6o2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2d5yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2eaxx")
+}, {
+"duration": 1.0,
 "texture": ExtResource("18_hk5du")
 }, {
 "duration": 1.0,
@@ -106,6 +160,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("23_0c2br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nre03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_l0p5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hx3pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_axbip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_xkb4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qw4po")
 }, {
 "duration": 1.0,
 "texture": ExtResource("24_nre03")
@@ -148,7 +220,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [node name="IntroMovie" type="Control" unique_id=607911600]
@@ -163,8 +235,8 @@ position = Vector2(865, 341)
 scale = Vector2(0.7206969, 0.7206969)
 sprite_frames = SubResource("SpriteFrames_ca42v")
 autoplay = "default"
-frame = 3
-frame_progress = 0.83185065
+frame = 58
+frame_progress = 0.7238136
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=714351759]
 position = Vector2(852, 768)

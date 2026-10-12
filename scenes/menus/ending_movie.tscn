@@ -71,6 +71,42 @@ animations = [{
 "texture": ExtResource("13_xd0jc")
 }, {
 "duration": 1.0,
+"texture": ExtResource("8_6qt6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a0grb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2cnle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pkwmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j5d8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xd0jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6qt6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a0grb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2cnle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pkwmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j5d8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xd0jc")
+}, {
+"duration": 1.0,
 "texture": ExtResource("14_7a2to")
 }, {
 "duration": 1.0,
@@ -123,7 +159,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [node name="EndingMovie" type="Control" unique_id=607911600]
@@ -138,5 +174,5 @@ position = Vector2(857, 905)
 scale = Vector2(0.77534324, 0.77534324)
 sprite_frames = SubResource("SpriteFrames_ca42v")
 autoplay = "default"
-frame = 13
-frame_progress = 0.9345185
+frame = 39
+frame_progress = 0.1411382
