@@ -39,6 +39,7 @@ position = Vector2(824.9999, 637.50006)
 scale = Vector2(0.50000006, 0.50000006)
 sprite_frames = SubResource("SpriteFrames_lxesk")
 animation = &"start_background"
+autoplay = "start_background"
 frame_progress = 0.8258951
 
 [node name="StartButton" type="Button" parent="." unique_id=576441493]
