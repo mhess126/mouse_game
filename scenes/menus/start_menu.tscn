@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_wc57o"]
 [ext_resource type="Texture2D" uid="uid://cmtifkkinntj8" path="res://assets/textures/bg/start_card/start-card-3.png" id="4_eba3y"]
 [ext_resource type="Texture2D" uid="uid://cjufpqoqmigsg" path="res://assets/textures/bg/start_card/start-card-4.png" id="5_kkacw"]
+[ext_resource type="Texture2D" uid="uid://bqkm0s5dgsbga" path="res://assets/textures/menus/buttons/start-quit-buttons.png" id="7_pihdo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lxesk"]
 animations = [{
@@ -27,6 +28,41 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="Theme" id="Theme_eba3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkacw"]
+bg_color = Color(0.9843137, 0.9843137, 0.93333334, 0.50980395)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmtu0"]
+bg_color = Color(0.9843137, 0.9843137, 0.93333334, 0.3529412)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnyec"]
+bg_color = Color(1, 0.9372549, 0.5411765, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_pihdo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsnt3"]
+bg_color = Color(0.08235294, 0.08235294, 0.07058824, 0.39215687)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eba3y"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="StartMenu" type="Control" unique_id=607911600]
 layout_mode = 3
 anchors_preset = 0
@@ -39,27 +75,39 @@ position = Vector2(824.9999, 637.50006)
 scale = Vector2(0.50000006, 0.50000006)
 sprite_frames = SubResource("SpriteFrames_lxesk")
 animation = &"start_background"
+autoplay = "start_background"
 frame_progress = 0.8258951
 
-[node name="StartButton" type="Button" parent="." unique_id=576441493]
+[node name="StartQuitButtons" type="Sprite2D" parent="." unique_id=1009118580]
+position = Vector2(832, 848.00006)
+scale = Vector2(0.40721485, 0.4072148)
+texture = ExtResource("7_pihdo")
+
+[node name="StartButtonOverlay" type="Button" parent="." unique_id=751345531]
 layout_mode = 0
-offset_left = 544.0
-offset_top = 576.0
-offset_right = 1120.0
-offset_bottom = 704.0
+offset_left = 766.3467
+offset_top = 684.8784
+offset_right = 965.52515
+offset_bottom = 829.0972
+rotation = -0.2068842
+theme = SubResource("Theme_eba3y")
 theme_override_fonts/font = ExtResource("3_wc57o")
 theme_override_font_sizes/font_size = 80
-text = "START"
+theme_override_styles/normal = SubResource("StyleBoxFlat_kkacw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gmtu0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fnyec")
 
-[node name="QuitButton" type="Button" parent="." unique_id=1158574547]
+[node name="QuitButtonOverlay" type="Button" parent="." unique_id=605487411]
 layout_mode = 0
 offset_left = 704.0
-offset_top = 768.0
-offset_right = 960.0
-offset_bottom = 899.0
+offset_top = 912.0
+offset_right = 888.0
+offset_bottom = 1032.0
+theme = SubResource("Theme_pihdo")
 theme_override_fonts/font = ExtResource("3_wc57o")
 theme_override_font_sizes/font_size = 60
-text = "QUIT"
+theme_override_styles/normal = SubResource("StyleBoxFlat_gsnt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eba3y")
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="StartButtonOverlay" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButtonOverlay" to="." method="_on_quit_button_pressed"]

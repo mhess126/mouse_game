@@ -328,6 +328,9 @@ position = Vector2(928, -1071)
 position = Vector2(224, -1089)
 type = "propeller"
 
+[node name="WingReward" parent="." unique_id=42478789 instance=ExtResource("20_43lt7")]
+position = Vector2(516, -1130)
+
 [connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]
 
 [editable path="Deathzone"]

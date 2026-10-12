@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://dbvn6qcia7n3c" path="res://scripts/menus/pause_menu.gd" id="1_gsnt3"]
 [ext_resource type="Texture2D" uid="uid://do21qnia3bmv8" path="res://assets/textures/bg/start-card.png" id="2_2wrho"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_gh0u6"]
+[ext_resource type="Texture2D" uid="uid://daagidph73jk7" path="res://assets/textures/menus/buttons/Controls button.png" id="4_2wrho"]
+[ext_resource type="StyleBox" uid="uid://s6g21aq01v7m" path="res://styles/basic_button.tres" id="4_xiui8"]
+[ext_resource type="StyleBox" uid="uid://btm3ema7fwmck" path="res://styles/basic_button_pressed.tres" id="5_dgi6y"]
+[ext_resource type="Texture2D" uid="uid://bnqnkfggvkhte" path="res://assets/textures/menus/buttons/Quit button.png" id="5_eyfc8"]
+[ext_resource type="StyleBox" uid="uid://gie1hiu28efk" path="res://styles/basic_button_hover.tres" id="5_gqhbq"]
+[ext_resource type="Texture2D" uid="uid://vu63pwh12iev" path="res://assets/textures/menus/buttons/Resume button.png" id="6_xiui8"]
 
 [node name="PauseMenu" type="Control" unique_id=607911600]
 layout_mode = 3
@@ -23,37 +29,58 @@ offset_left = -6.1035156e-05
 offset_top = -6.1035156e-05
 offset_right = 1647.0
 offset_bottom = 1273.0
-color = Color(1, 1, 1, 0.65882355)
+color = Color(0, 0, 0, 0.39215687)
 
-[node name="ResumeButton" type="Button" parent="." unique_id=576441493]
+[node name="ResumeButton" type="Button" parent="." unique_id=895705028]
 layout_mode = 0
-offset_left = 544.0
-offset_top = 576.0
-offset_right = 1120.0
+offset_left = 448.0
+offset_top = 512.0
+offset_right = 1216.0
 offset_bottom = 704.0
 theme_override_fonts/font = ExtResource("3_gh0u6")
 theme_override_font_sizes/font_size = 80
-text = "RESUME"
+theme_override_styles/normal = ExtResource("4_xiui8")
+theme_override_styles/pressed = ExtResource("5_dgi6y")
+theme_override_styles/hover = ExtResource("5_gqhbq")
 
-[node name="ControlsButton" type="Button" parent="." unique_id=895705028]
+[node name="ControlsButton" type="Button" parent="." unique_id=450667840]
 layout_mode = 0
-offset_left = 544.0
+offset_left = 448.0
 offset_top = 768.0
-offset_right = 1120.0
-offset_bottom = 896.0
+offset_right = 1216.0
+offset_bottom = 960.0
 theme_override_fonts/font = ExtResource("3_gh0u6")
 theme_override_font_sizes/font_size = 80
-text = "CONTROLS"
+theme_override_styles/normal = ExtResource("4_xiui8")
+theme_override_styles/pressed = ExtResource("5_dgi6y")
+theme_override_styles/hover = ExtResource("5_gqhbq")
 
-[node name="QuitButton" type="Button" parent="." unique_id=1158574547]
+[node name="QuitButton" type="Button" parent="." unique_id=363687121]
 layout_mode = 0
-offset_left = 704.0
+offset_left = 576.0
 offset_top = 1088.0
-offset_right = 960.0
-offset_bottom = 1219.0
+offset_right = 1088.0
+offset_bottom = 1216.0
 theme_override_fonts/font = ExtResource("3_gh0u6")
-theme_override_font_sizes/font_size = 60
-text = "QUIT"
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = ExtResource("4_xiui8")
+theme_override_styles/pressed = ExtResource("5_dgi6y")
+theme_override_styles/hover = ExtResource("5_gqhbq")
+
+[node name="ControlsButtonImage" type="Sprite2D" parent="." unique_id=1967638464]
+position = Vector2(805, 856)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_2wrho")
+
+[node name="QuitButton2" type="Sprite2D" parent="." unique_id=2049020845]
+position = Vector2(806, 1078)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_eyfc8")
+
+[node name="ResumeButton2" type="Sprite2D" parent="." unique_id=2087348953]
+position = Vector2(800.00006, 763)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_xiui8")
 
 [connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]

@@ -1,13 +1,146 @@
 [gd_scene format=3 uid="uid://dunsorjcjxaqv"]
 
 [ext_resource type="Script" uid="uid://betvwuyen4dcc" path="res://scripts/menus/upgrade_menu.gd" id="1_8v7sf"]
-[ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="2_m3ndr"]
-[ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/(lv.1) junk pile 7.png" id="3_twu2v"]
+[ext_resource type="Texture2D" uid="uid://c1m160gdg8rd4" path="res://assets/textures/bg/junk/level1/lv1_junk-pile2.png" id="2_m3ndr"]
+[ext_resource type="Texture2D" uid="uid://ql7bbhe0uu7c" path="res://assets/textures/bg/junk/level1/lv1_junk-pile6.png" id="2_twu2v"]
+[ext_resource type="Texture2D" uid="uid://l8t4waq4dfw" path="res://assets/textures/bg/junk/level1/lv1_junk-pile7.png" id="3_twu2v"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="4_m6ayr"]
+[ext_resource type="Texture2D" uid="uid://b101kdbhn6a4n" path="res://assets/textures/bg/junk/level1/lv1_junk-pile3.png" id="4_twu2v"]
+[ext_resource type="StyleBox" uid="uid://s6g21aq01v7m" path="res://styles/basic_button.tres" id="7_l20aj"]
+[ext_resource type="Texture2D" uid="uid://citdea6lhmh3a" path="res://assets/textures/menus/upgrade_buttons/wings/frame_07.png" id="7_twv5k"]
+[ext_resource type="StyleBox" uid="uid://gie1hiu28efk" path="res://styles/basic_button_hover.tres" id="8_50ams"]
+[ext_resource type="Texture2D" uid="uid://c8vkw4op1ueup" path="res://assets/textures/menus/upgrade_buttons/wings/frame_08.png" id="8_aq2vk"]
+[ext_resource type="StyleBox" uid="uid://btm3ema7fwmck" path="res://styles/basic_button_pressed.tres" id="8_ioe8x"]
+[ext_resource type="Texture2D" uid="uid://d2h140b4r33jl" path="res://assets/textures/menus/upgrade_buttons/wings/frame_09.png" id="9_l20aj"]
+[ext_resource type="Texture2D" uid="uid://t7vgj8nt5y7p" path="res://assets/textures/menus/upgrade_text/Untitled_Artwork-1.png" id="9_s4m3q"]
+[ext_resource type="Texture2D" uid="uid://y52x5q65oxod" path="res://assets/textures/menus/upgrade_text/Untitled_Artwork-2.png" id="10_7qrl8"]
+[ext_resource type="Texture2D" uid="uid://bimm708htqf31" path="res://assets/textures/menus/upgrade_buttons/wings/frame_10.png" id="10_50ams"]
+[ext_resource type="Texture2D" uid="uid://dbepcs0ltc60i" path="res://assets/textures/menus/upgrade_buttons/wings/frame_11.png" id="11_ioe8x"]
+[ext_resource type="Texture2D" uid="uid://2xepj3ig64bp" path="res://assets/textures/menus/upgrade_text/Untitled_Artwork-3.png" id="11_xbke2"]
+[ext_resource type="Texture2D" uid="uid://7pblg6p5c8vm" path="res://assets/textures/menus/upgrade_buttons/wings/frame_12.png" id="12_joymu"]
+[ext_resource type="Texture2D" uid="uid://d1770qocnndna" path="res://assets/textures/menus/upgrade_buttons/wings/frame_01.png" id="13_aqe64"]
+[ext_resource type="Texture2D" uid="uid://iinqufejigt" path="res://assets/textures/menus/upgrade_buttons/wings/frame_02.png" id="14_rpmqm"]
+[ext_resource type="Texture2D" uid="uid://chddjs346eckr" path="res://assets/textures/menus/upgrade_buttons/wings/frame_03.png" id="15_8gdck"]
+[ext_resource type="Texture2D" uid="uid://qveypaavg73u" path="res://assets/textures/menus/upgrade_buttons/wings/frame_04.png" id="16_6o6vv"]
+[ext_resource type="Texture2D" uid="uid://xc42sovpipub" path="res://assets/textures/menus/upgrade_buttons/wings/frame_05.png" id="17_mll8d"]
+[ext_resource type="Texture2D" uid="uid://msap3touqv68" path="res://assets/textures/menus/upgrade_buttons/wings/frame_06.png" id="18_ns2j1"]
+[ext_resource type="Texture2D" uid="uid://bi5nvhkt5umo1" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_01.png" id="19_v7d0l"]
+[ext_resource type="Texture2D" uid="uid://b8d247d02237p" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_02.png" id="20_ia8yt"]
+[ext_resource type="Texture2D" uid="uid://cg6yiiaoi78ew" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_03.png" id="21_5po0d"]
+[ext_resource type="Texture2D" uid="uid://blflyax5gkj25" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_04.png" id="22_qtey0"]
+[ext_resource type="Texture2D" uid="uid://b3lcw7r7118x6" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_05.png" id="23_23u1t"]
+[ext_resource type="Texture2D" uid="uid://bh6q5n3awnwtd" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_06.png" id="24_7saqa"]
+[ext_resource type="Texture2D" uid="uid://pg651usv5d8k" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_07.png" id="25_nrnrg"]
+[ext_resource type="Texture2D" uid="uid://nfxxpfna6vlx" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_08.png" id="26_dcwb8"]
+[ext_resource type="Texture2D" uid="uid://d1rs44coumfjv" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_09.png" id="27_1iaar"]
+[ext_resource type="Texture2D" uid="uid://diew2wp52dv0j" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_10.png" id="28_vurla"]
+[ext_resource type="Texture2D" uid="uid://bns62tywhm2ak" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_11.png" id="29_crps8"]
+[ext_resource type="Texture2D" uid="uid://dr6kkp2p0jjq3" path="res://assets/textures/menus/upgrade_buttons/propeller/frame_12.png" id="30_rscnx"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_fcv5n"]
-font = ExtResource("4_m6ayr")
-font_size = 90
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkg4p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_twv5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aq2vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l20aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_50ams")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ioe8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_joymu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aqe64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rpmqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8gdck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6o6vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mll8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ns2j1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76y3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_v7d0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ia8yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5po0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qtey0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_23u1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7saqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nrnrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dcwb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1iaar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vurla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_crps8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_rscnx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3xr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_s4m3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7qrl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xbke2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Upgrade Menu" type="Control" unique_id=607911600]
 layout_mode = 3
@@ -20,54 +153,86 @@ script = ExtResource("1_8v7sf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1729204692]
 layout_mode = 0
-offset_right = 1278.0
-offset_bottom = 898.0
-color = Color(0.7176471, 0.36862746, 0.07058824, 1)
+offset_right = 1657.0
+offset_bottom = 1278.0
+color = Color(0.68235296, 0.2784314, 0.05490196, 1)
 
-[node name="BG" parent="." unique_id=338693473 instance=ExtResource("2_m3ndr")]
+[node name="BackJunkPile" type="Sprite2D" parent="." unique_id=346709887]
+position = Vector2(1024, 416)
+scale = Vector2(0.76460785, 0.7646078)
+texture = ExtResource("2_twu2v")
 
-[node name="(lv_1)JunkPile7" type="Sprite2D" parent="." unique_id=1036014019]
-position = Vector2(683.00006, 848.00006)
-scale = Vector2(0.6052941, 0.6052941)
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=313934566]
+layout_mode = 0
+offset_right = 1650.0
+offset_bottom = 1280.0
+color = Color(0.68235296, 0.2784314, 0.05490196, 0.39215687)
+
+[node name="MidJunkPile" type="Sprite2D" parent="." unique_id=1036014019]
+position = Vector2(232, 984.00006)
+scale = Vector2(0.32546565, 0.32546565)
 texture = ExtResource("3_twu2v")
 
-[node name="Title" type="Label" parent="." unique_id=1553453175]
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=774468848]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 78.0
-offset_right = 1240.0
-offset_bottom = 318.0
+offset_top = 6.1035156e-05
+offset_right = 1650.0
+offset_bottom = 1280.0
+color = Color(0.68235296, 0.2784314, 0.05490196, 0.27450982)
+
+[node name="FrontJunk1" type="Sprite2D" parent="." unique_id=2126609924]
+position = Vector2(1736.0001, 1160)
+scale = Vector2(0.33465698, 0.33465686)
+texture = ExtResource("2_m3ndr")
+
+[node name="FrontJunk2" type="Sprite2D" parent="." unique_id=2092163238]
+position = Vector2(976, 1360)
+scale = Vector2(0.42029417, 0.42029408)
+texture = ExtResource("4_twu2v")
+
+[node name="WingButton" type="Button" parent="." unique_id=1960354401]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 448.0
+offset_right = 768.0
+offset_bottom = 832.0
 theme_override_fonts/font = ExtResource("4_m6ayr")
-text = "Upgrade"
-label_settings = SubResource("LabelSettings_fcv5n")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Option A" type="Button" parent="." unique_id=1960354401]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 384.0
-offset_right = 416.0
-offset_bottom = 512.0
 theme_override_font_sizes/font_size = 40
-text = "Upgrade A
-"
+theme_override_styles/normal = ExtResource("7_l20aj")
+theme_override_styles/pressed = ExtResource("8_ioe8x")
+theme_override_styles/hover = ExtResource("8_50ams")
 
-[node name="Option B" type="Button" parent="." unique_id=1250247483]
+[node name="PropellerButton" type="Button" parent="." unique_id=1250247483]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 384.0
-offset_right = 800.0
-offset_bottom = 512.0
+offset_left = 896.0
+offset_top = 448.0
+offset_right = 1408.0
+offset_bottom = 832.0
+theme_override_fonts/font = ExtResource("4_m6ayr")
 theme_override_font_sizes/font_size = 40
-text = "Upgrade B
-"
+theme_override_styles/normal = ExtResource("7_l20aj")
+theme_override_styles/pressed = ExtResource("8_ioe8x")
+theme_override_styles/hover = ExtResource("8_50ams")
 
-[node name="Option C" type="Button" parent="." unique_id=754187789]
-layout_mode = 0
-offset_left = 864.0
-offset_top = 384.0
-offset_right = 1184.0
-offset_bottom = 512.0
-theme_override_font_sizes/font_size = 40
-text = "Upgrade C"
+[node name="WingImage" type="AnimatedSprite2D" parent="." unique_id=1560982787]
+position = Vector2(443, 549)
+scale = Vector2(0.9697266, 0.9697266)
+sprite_frames = SubResource("SpriteFrames_dkg4p")
+autoplay = "default"
+frame_progress = 0.7025987
+
+[node name="PropellerImage" type="AnimatedSprite2D" parent="." unique_id=953230051]
+position = Vector2(1036, 576)
+sprite_frames = SubResource("SpriteFrames_76y3w")
+autoplay = "default"
+frame_progress = 0.41024843
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2112266100]
+position = Vector2(833.00006, 172)
+scale = Vector2(0.3532207, 0.3532207)
+sprite_frames = SubResource("SpriteFrames_p3xr0")
+autoplay = "default"
+frame_progress = 0.78913766
+
+[connection signal="pressed" from="WingButton" to="." method="_on_wing_upgrade_pressed"]
+[connection signal="pressed" from="PropellerButton" to="." method="_on_propeller_upgrade_pressed"]
