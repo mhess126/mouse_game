@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="3_wc57o"]
 [ext_resource type="Texture2D" uid="uid://cmtifkkinntj8" path="res://assets/textures/bg/start_card/start-card-3.png" id="4_eba3y"]
 [ext_resource type="Texture2D" uid="uid://cjufpqoqmigsg" path="res://assets/textures/bg/start_card/start-card-4.png" id="5_kkacw"]
+[ext_resource type="Texture2D" uid="uid://bqkm0s5dgsbga" path="res://assets/textures/menus/buttons/start-quit-buttons.png" id="7_pihdo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lxesk"]
 animations = [{
@@ -26,6 +27,41 @@ animations = [{
 "name": &"start_background",
 "speed": 4.0
 }]
+
+[sub_resource type="Theme" id="Theme_eba3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkacw"]
+bg_color = Color(0.9843137, 0.9843137, 0.93333334, 0.50980395)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmtu0"]
+bg_color = Color(0.9843137, 0.9843137, 0.93333334, 0.3529412)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnyec"]
+bg_color = Color(1, 0.9372549, 0.5411765, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_pihdo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsnt3"]
+bg_color = Color(0.08235294, 0.08235294, 0.07058824, 0.39215687)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eba3y"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="StartMenu" type="Control" unique_id=607911600]
 layout_mode = 3
