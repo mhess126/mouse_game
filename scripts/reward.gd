@@ -1,9 +1,10 @@
 extends Node2D
-class_name reward
+class_name Reward
 
 signal touched_player
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@export var type: String = "unknown"
+#@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _on_area_2d_body_entered(body):
 	if body is Player:
@@ -13,5 +14,5 @@ func _on_area_2d_body_entered(body):
 		# play a sound
 		# possibly add to player inventory
 		set_deferred("disabled", true)
-		animation_player.play("pickup")
+		#animation_player.play("pickup")
 		queue_free()

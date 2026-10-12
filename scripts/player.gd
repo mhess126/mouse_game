@@ -13,14 +13,18 @@ class_name Player
 @export var pedal_buffer_timer: float = 0.0
 @export var pedal_buffer_duration: float = 0.3 # 100 milliseconds buffer window
 
-@export var acceleration = 1200.0  # How fast you speed up
-@export var friction = 400.0      # How fast you slide to a stop
-@export var slope_gravity_scale = 1.0  # How strongly slopes pull you downhill
-@export var max_roll_speed = 600.0     # Speed cap when rolling downhill
+# Upgrade Modifiers
+@export var propeller_speed: float = 30.0
+
+@export var acceleration: float = 1200.0  # How fast you speed up
+@export var friction: float = 400.0      # How fast you slide to a stop
+@export var slope_gravity_scale: float = 1.0  # How strongly slopes pull you downhill
+@export var max_roll_speed: float = 600.0     # Speed cap when rolling downhill
 @onready var components: Node2D = $Components
-@onready var animated_sprite = $Components/AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $Components/MouseSprite
 @onready var wing_sprite: Sprite2D = $Components/WingSprite
 @onready var dirt: CPUParticles2D = $Components/Dirt
+@onready var propeller_sprite: AnimatedSprite2D = $Components/PropellerSprite
 
 signal stamina_changed
 
@@ -30,6 +34,10 @@ var direction: float = 1.0
 var stamina: float = max_stamina
 var stamina_delay_timer: float = 0.0
 
+var inventory: Dictionary = {
+	propellor = false
+}
+
 func _ready():
 	# Stick to the ground when rolling down slopes instead of hopping off
 	floor_snap_length = 8.0
@@ -37,6 +45,7 @@ func _ready():
 func use_stamina(amount: float) -> void:
 	stamina = max(stamina - amount, 0)
 	stamina_delay_timer = stamina_recharge_delay # Reset the delay clock
+	AudioPlayer.play_sfx("pedal")
 	stamina_changed.emit(stamina)
 
 func _process(delta) -> void:
@@ -95,7 +104,10 @@ func _physics_process(delta):
 		if pedaling:
 			dirt.emitting = true # configured for one-shot
 		if pedaling && stamina > 0 && velocity.x * direction < speed:
-			velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
+			if inventory.get("propeller", false) == true:
+				velocity.x = move_toward(velocity.x, direction * speed + propeller_speed, acceleration * delta)
+			else:
+				velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
 		elif !rolling_downhill:
 			velocity.x = move_toward(velocity.x, 0, friction * delta)
 
@@ -128,3 +140,11 @@ func reward(reward_type: String):
 	if reward_type == "wing":
 		wing_sprite.visible = true
 		max_jumps = 4
+	elif reward_type == "propeller":
+		propeller_sprite.visible = true
+		inventory.propeller = true
+	
+	if reward_type == "propeller":
+		propeller_sprite.visible = true
+		inventory.propeller = true
+		

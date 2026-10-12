@@ -39,6 +39,10 @@ project/assembly_name="Martian Mike"
 
 enabled=PackedStringArray("res://addons/rmsmartshape/plugin.cfg")
 
+[global_group]
+
+rewards="For powerups, pickups, and other nice things"
+
 [input]
 
 move_right={
@@ -89,6 +93,7 @@ pause={
 2d_physics/layer_3="deathzone"
 2d_physics/layer_4="trap"
 2d_physics/layer_5="start_and_exit"
+2d_physics/layer_6="rewards"
 
 [rendering]
 

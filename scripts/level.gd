@@ -3,8 +3,8 @@ extends Node2D
 @export var next_level: PackedScene = null
 @export var is_final_level: bool = false
 
-@onready var start = $Start
-@onready var exit = $Exit
+@onready var start = $Features/Start
+@onready var exit = $Features/Exit
 @onready var death_zone = $Deathzone
 
 @onready var hud = $UILayer/HUD
@@ -33,7 +33,8 @@ func _ready():
 		trap.touched_player.connect(_on_trap_touched_player)
 	
 	for reward_item in rewards:
-		reward_item.touched_player.connect(_on_reward_touched_player)
+		print(reward_item)
+		reward_item.touched_player.connect(_on_reward_touched_player.bind(reward_item))
 	
 	exit.body_entered.connect(_on_exit_body_entered)
 	death_zone.body_entered.connect(_on_deathzone_body_entered)
@@ -53,9 +54,12 @@ func _on_trap_touched_player():
 	AudioPlayer.play_sfx("hurt")
 	reset_player()
 
-func _on_reward_touched_player():
+func _on_reward_touched_player(emitter: Reward):
 	AudioPlayer.play_sfx("hurt")
-	player.reward("wing")
+	if emitter.type == "wing":
+		player.reward("wing")
+	elif emitter.type == "propeller":
+		player.reward("propeller")
 
 func reset_player():
 	player.velocity = Vector2.ZERO

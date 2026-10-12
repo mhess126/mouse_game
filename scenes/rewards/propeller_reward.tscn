@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://djr7bv77ymdf8"]
+
+[ext_resource type="Script" uid="uid://dg05uhddlnmg2" path="res://scripts/reward.gd" id="1_0xoga"]
+[ext_resource type="Texture2D" uid="uid://d355htxmdtton" path="res://assets/textures/player/prop_only_slow/frame_1.png" id="1_6ifpl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxesk"]
+radius = 22.090721
+
+[node name="PropellerReward" type="Node2D" unique_id=1518737599 groups=["rewards"]]
+script = ExtResource("1_0xoga")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=409912741]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_6ifpl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=940064678]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=175414606]
+shape = SubResource("CircleShape2D_lxesk")

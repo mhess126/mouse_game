@@ -1,13 +1,55 @@
 [gd_scene format=3 uid="uid://eoixxffeve81"]
 
 [ext_resource type="Script" uid="uid://cjp4wr3cx6sw8" path="res://scripts/player.gd" id="1_8vnnm"]
+[ext_resource type="Texture2D" uid="uid://d355htxmdtton" path="res://assets/textures/player/prop_only_slow/frame_1.png" id="2_3y6pe"]
+[ext_resource type="Texture2D" uid="uid://7vnc5ptks7ar" path="res://assets/textures/player/prop_only_slow/frame_2.png" id="3_fnbmh"]
 [ext_resource type="Texture2D" uid="uid://b4bf6lsawx5up" path="res://assets/textures/player/mouse_move/frame_1.png" id="3_qwiqu"]
 [ext_resource type="Texture2D" uid="uid://1sk108e3l7ye" path="res://assets/textures/illustration-wing-128x128.png" id="3_r8eo0"]
 [ext_resource type="Texture2D" uid="uid://boa5xgyrjd5my" path="res://assets/textures/player/mouse_move/frame_2.png" id="4_7jbp3"]
+[ext_resource type="Texture2D" uid="uid://brhecutlk677d" path="res://assets/textures/player/prop_only_slow/frame_3.png" id="4_ftj0r"]
+[ext_resource type="Texture2D" uid="uid://bo3t6y47jelyo" path="res://assets/textures/player/prop_only_slow/frame_4.png" id="5_dk0wa"]
 [ext_resource type="Texture2D" uid="uid://cfbc43vily4r6" path="res://assets/textures/player/mouse_move/frame_3.png" id="5_xb4hn"]
+[ext_resource type="Texture2D" uid="uid://cbmeny8mv6tk8" path="res://assets/textures/player/prop_only_slow/frame_5.png" id="6_bqlv2"]
 [ext_resource type="Texture2D" uid="uid://c8i08vfs7n6r7" path="res://assets/textures/player/mouse_move/frame_4.png" id="6_xfypw"]
 [ext_resource type="Texture2D" uid="uid://ckjye7dd3htfs" path="res://assets/textures/player/mouse_move/frame_5.png" id="7_5ia86"]
+[ext_resource type="Texture2D" uid="uid://twnyel5o7fyf" path="res://assets/textures/player/prop_only_slow/frame_6.png" id="7_5xyje"]
 [ext_resource type="Texture2D" uid="uid://jaxxn20vqy4h" path="res://assets/textures/player/mouse_move/frame_6.png" id="8_7eb16"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxesk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3y6pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fnbmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ftj0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dk0wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bqlv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5xyje")
+}],
+"loop": 1,
+"name": &"spinner",
+"speed": 15.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_qja66"]
+offsets = PackedFloat32Array(0, 0.52506965, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d8p8g"]
+gradient = SubResource("Gradient_qja66")
+width = 8
+height = 1
+fill_to = Vector2(1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vwmer"]
 animations = [{
@@ -97,7 +139,29 @@ limit_bottom = 255
 [node name="Components" type="Node2D" parent="." unique_id=958328936]
 position = Vector2(1, -218)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Components" unique_id=1922450349]
+[node name="PropellerSprite" type="AnimatedSprite2D" parent="Components" unique_id=498523155]
+visible = false
+position = Vector2(-54, 175.00002)
+rotation = 3.1415927
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_lxesk")
+animation = &"spinner"
+autoplay = "spinner"
+frame_progress = 0.89980245
+
+[node name="WindParticles" type="CPUParticles2D" parent="Components/PropellerSprite" unique_id=473615480]
+position = Vector2(11.666662, 2.7034066e-05)
+rotation = 3.1415925
+scale = Vector2(1.6666666, 1.6666666)
+amount = 10
+texture = SubResource("GradientTexture2D_d8p8g")
+direction = Vector2(-120, 0)
+spread = 21.83
+initial_velocity_max = 1000.0
+angular_velocity_min = -720.0
+angular_velocity_max = -720.0
+
+[node name="MouseSprite" type="AnimatedSprite2D" parent="Components" unique_id=1922450349]
 position = Vector2(0, 154)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vwmer")
