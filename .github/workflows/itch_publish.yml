@@ -1,0 +1,43 @@
+name: "Build and Deploy Web Game to Itch.io"
+
+on:
+  push:
+    branches: [ "main" ] # Triggers whenever you push to your main branch
+
+env:
+  GODOT_VERSION: "4.3" # Change this to match your exact Godot version (e.g., 4.2.1, 4.3, etc.)
+  ITCH_USERNAME: env.ITCH_USERNAME # Replace with your exact itch.io username
+  ITCH_GAME_ID: env.ITCH_SLUG # Replace with the URL slug of your itch game page
+
+jobs:
+  export-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Builds the project using an optimized Godot engine Docker container
+      - name: Godot Web Export
+        uses: barichello/godot-ci@v4.3.0 # Match this tag to your Godot version major/minor
+        with:
+          relative_project_path: "./" # Adjust if your project.godot is inside a subfolder
+          godot_version: ${{ env.GODOT_VERSION }}
+
+      # Creates the output directory and compiles the web files
+      - name: Build Web Target
+        run: |
+          mkdir -v -p build/web
+          godot --headless --verbose --export-release "Web" build/web/index.html
+
+      # Deploys the built package folder directly to your itch page under the HTML5 channel
+      - name: Publish to Itch.io via Butler
+        uses: manleydev/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.ITCH_DEPLOY_TOKEN }}
+          CHANNEL: html5
+          ITCH_USER: ${{ env.ITCH_USERNAME }}
+          ITCH_GAME: ${{ env.ITCH_GAME_ID }}
+          PACKAGE: build/web
+
