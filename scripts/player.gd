@@ -7,14 +7,14 @@ class_name Player
 @export var pedal_stamina_cost: float = 2.0
 @export var gravity: float = 400.0
 @export var jump_force = 140
-@export var speed = 400
+@export var speed: float = 400.0
 @export var max_jumps = 2
 @export var rotation_speed = 5.0
 @export var pedal_buffer_timer: float = 0.0
 @export var pedal_buffer_duration: float = 0.3 # 100 milliseconds buffer window
 
 # Upgrade Modifiers
-@export var propeller_speed: float = 30.0
+@export var propeller_speed: float = 2000.0
 
 @export var acceleration: float = 1200.0  # How fast you speed up
 @export var friction: float = 400.0      # How fast you slide to a stop
@@ -105,7 +105,7 @@ func _physics_process(delta):
 			dirt.emitting = true # configured for one-shot
 		if pedaling && stamina > 0 && velocity.x * direction < speed:
 			if inventory.get("propeller", false) == true:
-				velocity.x = move_toward(velocity.x, direction * speed + propeller_speed, acceleration * delta)
+				velocity.x = move_toward(velocity.x, direction * speed * propeller_speed, acceleration * delta * propeller_speed)
 			else:
 				velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
 		elif !rolling_downhill:

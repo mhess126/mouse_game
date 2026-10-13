@@ -80,3 +80,11 @@ func _on_exit_body_entered(body):
 func _on_player_stamina_changed(value: int) -> void:
 	hud.set_stamina_meter(value)
 	pass # Replace with function body.
+
+
+func _on_propeller_reward_touched_player(emitter: Reward) -> void:
+	AudioPlayer.play_sfx("hurt")
+	if emitter.type == "wing":
+		player.reward("wing")
+	elif emitter.type == "propeller":
+		player.reward("propeller")

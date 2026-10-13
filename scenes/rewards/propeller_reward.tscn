@@ -13,9 +13,12 @@ script = ExtResource("1_0xoga")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_6ifpl")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=940064678]
-collision_layer = 0
-collision_mask = 0
+[node name="Area2D" type="Area2D" parent="." unique_id=1755117657]
+collision_layer = 32
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=175414606]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=175414606]
 shape = SubResource("CircleShape2D_lxesk")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

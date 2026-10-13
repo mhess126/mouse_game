@@ -124,7 +124,7 @@ size = Vector2(91, 119.53125)
 
 [node name="Player" type="CharacterBody2D" unique_id=2117069531 groups=["player"]]
 collision_layer = 2
-collision_mask = 13
+collision_mask = 45
 script = ExtResource("1_8vnnm")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=450145002]
