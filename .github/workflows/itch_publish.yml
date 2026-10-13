@@ -5,7 +5,7 @@ on:
     branches: [ "main" ] # Triggers whenever you push to your main branch
 
 env:
-  GODOT_VERSION: "4.3" # Change this to match your exact Godot version (e.g., 4.2.1, 4.3, etc.)
+  GODOT_VERSION: "4.7.2" # Change this to match your exact Godot version (e.g., 4.2.1, 4.3, etc.)
   ITCH_USERNAME: ktcteamred
   ITCH_GAME_ID: reach-for-the-sky
 
@@ -13,7 +13,7 @@ jobs:
   export-and-deploy:
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.3   # Replace 4.3 with your Godot version
+      image: barichello/godot-ci:4.7.2   # Replace 4.3 with your Godot version
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
@@ -23,7 +23,8 @@ jobs:
       - name: Setup Godot Export Templates
         run: |
           mkdir -v -p /github/home/.local/share/godot/export_templates/
-          ln -s /root/.local/share/godot/export_templates/4.3.stable /github/home/.local/share/godot/export_templates/4.3.stable
+          ls -Alt /root/.local/share/godot/export_templates
+          ln -s /root/.local/share/godot/export_templates/4.7.2.stable /github/home/.local/share/godot/export_templates/4.7.2.stable
 
       # Builds the project using an optimized Godot engine Docker container
       - name: Godot Web Export

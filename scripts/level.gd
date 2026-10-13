@@ -6,6 +6,7 @@ extends Node2D
 @onready var start = $LevelStructure/Features/StartNode/Start
 @onready var exit = $LevelStructure/Features/Exit
 @onready var death_zone = $Deathzone
+@onready var music_player: AudioStreamPlayer = $MusicPlayer
 
 @onready var hud = $UILayer/HUD
 @onready var ui_layer = $UILayer
@@ -20,6 +21,8 @@ var time_left
 var win = false
 
 func _ready():
+	AudioPlayer.music_player.stop()
+	AudioPlayer.music_player.stream = load("res://assets/audio/ReachForTheSkyOboe.ogg")
 	AudioPlayer.play_music()
 
 	player = get_tree().get_first_node_in_group("player")
