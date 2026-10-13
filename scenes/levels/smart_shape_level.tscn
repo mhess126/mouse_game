@@ -34,7 +34,6 @@
 [ext_resource type="Resource" uid="uid://b4shiwchygdm1" path="res://materials/ss2d_ground_asphalt.tres" id="18_b8vq0"]
 [ext_resource type="PackedScene" uid="uid://bfi3wl3ecmvan" path="res://scenes/features/jump_pad.tscn" id="19_pe55e"]
 [ext_resource type="PackedScene" uid="uid://djr7bv77ymdf8" path="res://scenes/rewards/propeller_reward.tscn" id="21_267y3"]
-[ext_resource type="PackedScene" uid="uid://btjcl6kfnybxx" path="res://scenes/traps/spike_ball.tscn" id="22_klt8m"]
 
 [sub_resource type="Gradient" id="Gradient_i0t0u"]
 offsets = PackedFloat32Array(0.5839754, 0.89522344, 0.9661017)
@@ -54,7 +53,7 @@ size = Vector2(22655, 400)
 
 [sub_resource type="Resource" id="Resource_mkeiv"]
 script = ExtResource("9_mnrut")
-position = Vector2(-1382.1538, -1286.0452)
+position = Vector2(-1342.8811, -1290.4087)
 
 [sub_resource type="Resource" id="Resource_7xler"]
 script = ExtResource("9_mnrut")
@@ -104,29 +103,29 @@ _points = {
 21: SubResource("Resource_wqujp")
 }
 _point_order = PackedInt32Array(0, 17, 1)
-_next_key = 23
+_next_key = 22
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vta3k"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_267y3"]
 _surfaces = [{
-"aabb": AABB(-1389.641, -1286.4844, 0, 1361.038, 561.8188, 1e-05),
-"attribute_data": PackedByteArray("/////wAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAgD8AAAAAAACAP/////9QBehAAACAP1AF6EAAAIA//////1AF6EAAAAAAUAXoQAAAAAD/////2nGEQQAAgD/acYRBAACAP//////acYRBAAAAANpxhEEAAAAA/////ym6uUEAAIA/Kbq5QQAAgD//////Kbq5QQAAAAApurlBAAAAAP/////rBM1BAACAP+sEzUEAAIA//////+sEzUEAAAAA6wTNQQAAAAD/////u5jTQQAAgD+7mNNBAACAP/////+7mNNBAAAAALuY00EAAAAA/////wAA2EEAAIA/AADYQQAAgD//////AADYQQAAAAAAANhBAAAAAA=="),
+"aabb": AABB(-1359.074, -1290.57, 0, 1330.471, 565.90436, 1e-05),
+"attribute_data": PackedByteArray("/////wAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAgD8AAAAAAACAP/////+JR+lAAACAP4lH6UAAAIA//////4lH6UAAAAAAiUfpQAAAAAD/////d5yEQQAAgD93nIRBAACAP/////93nIRBAAAAAHechEEAAAAA/////5nJuUEAAIA/mcm5QQAAgD//////mcm5QQAAAACZyblBAAAAAP////+FCs1BAACAP4UKzUEAAIA//////4UKzUEAAAAAhQrNQQAAAAD/////+prTQQAAgD/6mtNBAACAP//////6mtNBAAAAAPqa00EAAAAA/////wAA2EEAAIA/AADYQQAAgD//////AADYQQAAAAAAANhBAAAAAA=="),
 "format": 34359742527,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMAAwACAAQAAwAEAAUABQAEAAYABQAGAAcABwAGAAgABwAIAAkACQAIAAoACQAKAAsACwAKAAwACwAMAA0A"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 14,
-"vertex_data": PackedByteArray("VdWrxIDPoMQAAAAAg7StxGSzoMQAAAAA0NupxB0GRsQAAAAAZoOoxMeiSMQAAAAArgQ2xMKbN8QAAAAA5s81xE5aO8QAAAAAzN+Kw5kqNcQAAAAAEC+Lw8fpOMQAAAAATEPlwpZwOcQAAAAAyjPrwpYdPcQAAAAAOIduwm+gPcQAAAAAbrGEwuP6QMQAAAAAF9PkwclLQ8QAAAAAlPMVwkNRRsQAAAAA/3//f3+HwAP/f/9/gofBA/9//3/Rvmgf/3//f9O+ah//f/9/fPm+PP9//399+b48/3//f+n6ikL/f/9/6fqKQv9//39v6sdK/3//f3TqxEr/f/9/a9VJVf9//39k1UxV/3//f6nJKlv/f/9/kck2Ww==")
+"vertex_data": PackedByteArray("QOymxOtHocQAAAAAJMyoxD1SocQAAAAAXuKpxCsURsQAAAAA2HyoxLmUSMQAAAAArgQ2xMKbN8QAAAAA5s81xE5aO8QAAAAAzN+Kw5kqNcQAAAAAEC+Lw8fpOMQAAAAATEPlwpZwOcQAAAAAyjPrwpYdPcQAAAAAOIduwm+gPcQAAAAAbrGEwuP6QMQAAAAAF9PkwclLQ8QAAAAAlPMVwkNRRsQAAAAA/3//f8l9GgH/f/9/zX0YAf9//384vBwe/3//fzy8Hh7/f/9/gfnAPP9//3+C+cE8/3//f+n6ikL/f/9/6fqKQv9//39v6sdK/3//f3TqxEr/f/9/a9VJVf9//39k1UxV/3//f6nJKlv/f/9/kck2Ww==")
 }]
 
-[sub_resource type="Resource" id="Resource_3n8i3"]
+[sub_resource type="Resource" id="Resource_ubkrh"]
 script = ExtResource("11_8jyg3")
 texture = ExtResource("12_b8vq0")
-mesh = SubResource("ArrayMesh_vta3k")
+mesh = SubResource("ArrayMesh_267y3")
 
-[sub_resource type="Resource" id="Resource_pe55e"]
+[sub_resource type="Resource" id="Resource_a8txx"]
 script = ExtResource("14_gef0u")
-meshes = Array[ExtResource("11_8jyg3")]([SubResource("Resource_3n8i3")])
+meshes = Array[ExtResource("11_8jyg3")]([SubResource("Resource_ubkrh")])
 
 [sub_resource type="Resource" id="Resource_elo1s"]
 script = ExtResource("16_i0t0u")
@@ -176,7 +175,7 @@ _points = {
 _point_order = PackedInt32Array(0, 1, 2)
 _next_key = 5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8bj56"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_shnbd"]
 _surfaces = [{
 "aabb": AABB(1191.6776, -1191.6608, 0, 480.79456, 166.64636, 1e-05),
 "attribute_data": PackedByteArray("/////wAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAgD8AAAAAAACAP/////8SN3NAAACAPxI3c0AAAIA//////xI3c0AAAAAAEjdzQAAAAAD/////hcuCQAAAgD+Fy4JAAACAP/////+Fy4JAAAAAAIXLgkAAAAAA/////5yYjEAAAIA/nJiMQAAAgD//////nJiMQAAAAACcmIxAAAAAAP/////PpqFAAACAP8+moUAAAIA//////8+moUAAAAAAz6ahQAAAAAD/////6E/NQAAAgD/oT81AAACAP//////oT81AAAAAAOhPzUAAAAAA/////wAAAEEAAIA/AAAAQQAAgD//////AAAAQQAAAAAAAABBAAAAAA=="),
@@ -189,14 +188,14 @@ _surfaces = [{
 "vertex_data": PackedByteArray("r/WURFT/gcQAAAAAqxaVRHYggMQAAAAAd72zRGQ9gsQAAAAAS4CzRHoZhMQAAAAA+R62RIawgsQAAAAAeay1RKqChMQAAAAASJa4RGNwg8QAAAAAFPC3RLEyhcQAAAAAOJC9RJ6dhcQAAAAANLG8RKpGh8QAAAAA7gfHRI95i8QAAAAANvPFRMUBjcQAAAAAHA/RREt+k8QAAAAATOPPRCX1lMQAAAAA/3//f733IET/f/9/vfcgRP9//39u8UhH/3//f2zxSEf/f/9/v+afTP9//3+/5p9M/3//f3zdQVH/f/9/fd1AUf9//3/z0wVW/3//f/TTBVb/f/9/DMt4Wv9//38My3la/3//fxvHcVz/f/9/G8dxXA==")
 }]
 
-[sub_resource type="Resource" id="Resource_kkcx1"]
+[sub_resource type="Resource" id="Resource_lf85e"]
 script = ExtResource("11_8jyg3")
 texture = ExtResource("12_b8vq0")
-mesh = SubResource("ArrayMesh_8bj56")
+mesh = SubResource("ArrayMesh_shnbd")
 
-[sub_resource type="Resource" id="Resource_04pxl"]
+[sub_resource type="Resource" id="Resource_8py63"]
 script = ExtResource("14_gef0u")
-meshes = Array[ExtResource("11_8jyg3")]([SubResource("Resource_kkcx1")])
+meshes = Array[ExtResource("11_8jyg3")]([SubResource("Resource_lf85e")])
 
 [sub_resource type="Resource" id="Resource_f42pg"]
 script = ExtResource("9_mnrut")
@@ -241,7 +240,7 @@ _points = {
 _point_order = PackedInt32Array(0, 1, 4, 2, 8, 3)
 _next_key = 9
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mchr3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_brkxn"]
 _surfaces = [{
 "aabb": AABB(1911.4745, -1269.2363, 0, 1587.3588, 342.14624, 1e-05),
 "attribute_data": PackedByteArray("/////wAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAgD8AAAAAAACAP//////NOA9AAACAP804D0AAAIA//////804D0AAAAAAzTgPQAAAAAD/////Fs6DQAAAgD8WzoNAAACAP/////8WzoNAAAAAABbOg0AAAAAA/////0i9n0AAAIA/SL2fQAAAgD//////SL2fQAAAAABIvZ9AAAAAAP/////uebdAAACAP+55t0AAAIA//////+55t0AAAAAA7nm3QAAAAAD/////yI7MQAAAgD/IjsxAAACAP//////IjsxAAAAAAMiOzEAAAAAA/////6zd4UAAAIA/rN3hQAAAgD//////rN3hQAAAAACs3eFAAAAAAP////8GzRpBAACAPwbNGkEAAIA//////wbNGkEAAAAABs0aQQAAAAD/////aOcjQQAAgD9o5yNBAACAP/////9o5yNBAAAAAGjnI0EAAAAA/////4AvKEEAAIA/gC8oQQAAgD//////gC8oQQAAAACALyhBAAAAAP/////yVyxBAACAP/JXLEEAAIA///////JXLEEAAAAA8lcsQQAAAAD/////eqIwQQAAgD96ojBBAACAP/////96ojBBAAAAAHqiMEEAAAAA/////+JRNUEAAIA/4lE1QQAAgD//////4lE1QQAAAADiUTVBAAAAAP////+q7j9BAACAP6ruP0EAAIA//////6ruP0EAAAAAqu4/QQAAAAD/////5kxzQQAAgD/mTHNBAACAP//////mTHNBAAAAAOZMc0EAAAAA/////6jQf0EAAIA/qNB/QQAAgD//////qNB/QQAAAACo0H9BAAAAAP////8Y6oJBAACAPxjqgkEAAIA//////xjqgkEAAAAAGOqCQQAAAAD/////htyFQQAAgD+G3IVBAACAP/////+G3IVBAAAAAIbchUEAAAAA/////8DhiEEAAIA/wOGIQQAAgD//////wOGIQQAAAADA4YhBAAAAAP////9zF4xBAACAP3MXjEEAAIA//////3MXjEEAAAAAcxeMQQAAAAD/////EgGTQQAAgD8SAZNBAACAP/////8SAZNBAAAAABIBk0EAAAAA/////4iCoUEAAIA/iIKhQQAAgD//////iIKhQQAAAACIgqFBAAAAAP/////8obJBAACAP/yhskEAAIA///////yhskEAAAAA/KGyQQAAAAD/////AADQQQAAgD8AANBBAACAP/////8AANBBAAAAAAAA0EEAAAAA"),
@@ -254,14 +253,14 @@ _surfaces = [{
 "vertex_data": PackedByteArray("TbvvRNddjsQAAAAAL+/uRGerjMQAAAAAxhsAReKMhMQAAAAAangARa5HhsQAAAAAL6oHRTT0fcQAAAAA+fAHRb7EgMQAAAAAoVMLRU5JesQAAAAAT30LRbb6fcQAAAAAP40ORXDzeMQAAAAA64sORWyzfMQAAAAAx20RRdxFesQAAAAA9z0RRaDyfcQAAAAADzgURaOOfcQAAAAACeQTRfCIgMQAAAAATVkeRfkLiMQAAAAAtwUeRevNicQAAAAArJsgRahbicQAAAAAYGogRWwxi8QAAAAAzqshRXCjicQAAAAAhpwhRXiCi8QAAAAAwrQiRbKhicQAAAAACMoiRdB/i8QAAAAAxcEjRR9DicQAAAAA1fwjRV0Ui8QAAAAAl98kRViDiMQAAAAAKzwlRTI+isQAAAAAzFcnRUUDhsQAAAAADs4nRfOkh8QAAAAAhe0yRc7XbsQAAAAAoVkzReIwcsQAAAAAVRo2RaLgacQAAAAA22A2RUB2bcQAAAAA47k3RX9laMQAAAAAHeA3RT0ZbMQAAAAALlo5RcTFZ8QAAAAAGl85RZCFa8QAAAAAAAY7RV4jaMQAAAAABuk6RVjca8QAAAAA6MM8RZN1acQAAAAAZIY8RX8VbcQAAAAAVlBARVBXbsQAAAAAIO8/RQrFccQAAAAAViRHRSddfcQAAAAAFKJGRbxBgMQAAAAApHVORQ6ticQAAAAAqOJNRYIoi8QAAAAAVa1aRXwwncQAAAAAkRdaRZCnnsQAAAAA/3//fxXXiiv/f/9/FdeLK/9//3882h4t/3//fzzaHi3/f/9/zuHnMP9//3/O4ecw/3//f9PsaTb/f/9/0OxoNv9//39V/1RA/3//f1b/U0D/f/9/XurQSv9//39b6tFK/3//fyrdalH/f/9/Kd1qUf9//39S3VZR/3//f1LdVVH/f/9/zekYS/9//3/L6RlL/3//f0f420P/f/9/TPjZQ/9//3+D9cI6/3//f4H1wDr/f/9/E+YKM/9//38X5gsz/3//f0DaIC3/f/9/QdohLf9//3+60d0o/3//f7vR3Sj/f/9/D9WHKv9//38P1Ygq/3//f+Xh8zD/f/9/6OH0MP9//3867h03/3//fzruHTf/f/9/aP20Pv9//39n/bM+/3//fxry8Ub/f/9/GfLyRv9//38q5WpN/3//fyvlaU3/f/9/tNikU/9//3+12KRT/3//f8HNHln/f/9/wc0eWf9//38eyPBb/3//fx3I8Fv/f/9/KcdqXP9//38px2pc")
 }]
 
-[sub_resource type="Resource" id="Resource_itanx"]
+[sub_resource type="Resource" id="Resource_u2e1r"]
 script = ExtResource("11_8jyg3")
 texture = ExtResource("12_b8vq0")
-mesh = SubResource("ArrayMesh_mchr3")
+mesh = SubResource("ArrayMesh_brkxn")
 
-[sub_resource type="Resource" id="Resource_yjmay"]
+[sub_resource type="Resource" id="Resource_g25te"]
 script = ExtResource("14_gef0u")
-meshes = Array[ExtResource("11_8jyg3")]([SubResource("Resource_itanx")])
+meshes = Array[ExtResource("11_8jyg3")]([SubResource("Resource_u2e1r")])
 
 [sub_resource type="Resource" id="Resource_shnbd"]
 script = ExtResource("9_mnrut")
@@ -556,7 +555,7 @@ position = Vector2(-139, 1084)
 
 [node name="01" type="CollisionPolygon2D" parent="LevelStructure/Row1/GroundCollisions" unique_id=1819229955]
 position = Vector2(1424, 820)
-polygon = PackedVector2Array(-1776.4877, -1930.3195, -1150.6606, -1874.9224, -701.05804, -1865.1592, -539.1163, -1882.1107, -485.9893, -1898.2134, -456.04547, -1920.2269, -450.12228, -1912.1699, -481.44763, -1889.1409, -537.1275, -1872.2643, -700.6444, -1855.1478, -1151.2108, -1864.932, -1785.9652, -1921.1193, -1815.1367, -2418.4597, -1805.1538, -2419.0452)
+polygon = PackedVector2Array(-1765.8811, -2423.4087, -1776.4877, -1930.3195, -1150.6606, -1874.9224, -701.05804, -1865.1592, -539.1163, -1882.1107, -485.9893, -1898.2134, -456.04547, -1920.2269, -450.12228, -1912.1699, -481.44763, -1889.1409, -537.1275, -1872.2643, -700.6444, -1855.1478, -1151.2108, -1864.932, -1786.6864, -1921.1831, -1775.8788, -2423.6238)
 
 [node name="02" type="CollisionPolygon2D" parent="LevelStructure/Row1/GroundCollisions" unique_id=815005989]
 polygon = PackedVector2Array(1704.0337, -1178.9944, 1623.6995, -1114.7412, 1547.6802, -1067.6895, 1507.5679, -1050.1506, 1487.5677, -1044.0742, 1468.2416, -1040.4215, 1222.8802, -1023.5204, 1222.193, -1033.4967, 1466.965, -1050.3573, 1485.1787, -1053.7998, 1504.0994, -1059.5481, 1543.0222, -1076.5669, 1617.9241, -1122.927, 1697.7876, -1186.8037)
@@ -571,7 +570,7 @@ position = Vector2(-139, 1084)
 position = Vector2(1001, -313)
 script = ExtResource("8_oybgb")
 _points = SubResource("Resource_x008o")
-_mesh_cache = SubResource("Resource_pe55e")
+_mesh_cache = SubResource("Resource_a8txx")
 shape_material = SubResource("Resource_qm04o")
 collision_size = 10.0
 collision_polygon_node_path = NodePath("../../GroundCollisions/01")
@@ -581,7 +580,7 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 position = Vector2(30, -1)
 script = ExtResource("8_oybgb")
 _points = SubResource("Resource_e1jnt")
-_mesh_cache = SubResource("Resource_04pxl")
+_mesh_cache = SubResource("Resource_8py63")
 shape_material = ExtResource("18_b8vq0")
 collision_size = 10.0
 collision_polygon_node_path = NodePath("../../GroundCollisions/02")
@@ -590,7 +589,7 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 [node name="03" type="Node2D" parent="LevelStructure/Row1/GroudShapes" unique_id=665527327]
 script = ExtResource("8_oybgb")
 _points = SubResource("Resource_74l7y")
-_mesh_cache = SubResource("Resource_yjmay")
+_mesh_cache = SubResource("Resource_g25te")
 shape_material = ExtResource("18_b8vq0")
 collision_size = 10.0
 collision_polygon_node_path = NodePath("../../GroundCollisions/03")
@@ -663,10 +662,6 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 position = Vector2(258, -1088)
 rotation = 0.46082735
 
-[node name="SpikeBall" parent="Features" unique_id=42478789 instance=ExtResource("22_klt8m")]
-position = Vector2(1212, -843)
-
 [connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]
-[connection signal="touched_player" from="Features/PropellerReward" to="." method="_on_propeller_reward_touched_player"]
 
 [editable path="Deathzone"]
