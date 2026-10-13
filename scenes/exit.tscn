@@ -1,93 +1,30 @@
 [gd_scene format=3 uid="uid://cn4rpl6hgiarx"]
 
 [ext_resource type="Script" uid="uid://c1kir1thf6xsa" path="res://scripts/exit.gd" id="1_lxldl"]
-[ext_resource type="Texture2D" uid="uid://cdlqr18vrxdbo" path="res://assets/textures/other/End (Pressed) (64x64).png" id="2_x2qii"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ckls7"]
-atlas = ExtResource("2_x2qii")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jyxxx"]
-atlas = ExtResource("2_x2qii")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gwfrl"]
-atlas = ExtResource("2_x2qii")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ywqtg"]
-atlas = ExtResource("2_x2qii")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fsyvo"]
-atlas = ExtResource("2_x2qii")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3ll0"]
-atlas = ExtResource("2_x2qii")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddabn"]
-atlas = ExtResource("2_x2qii")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qmqf7"]
-atlas = ExtResource("2_x2qii")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bq7jo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ckls7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jyxxx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gwfrl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ywqtg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fsyvo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a3ll0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ddabn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qmqf7")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 20.0
-}]
+[ext_resource type="Texture2D" uid="uid://dt4vsek1uyg0u" path="res://assets/textures/other/blimp.png" id="2_uyw7u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h20fs"]
-radius = 6.08276
+radius = 97.18539
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ju24"]
-size = Vector2(34, 8)
+size = Vector2(78.5, 36.974396)
 
 [node name="Exit" type="Area2D" unique_id=1698018413]
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_lxldl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=760333769]
-position = Vector2(0, -32)
-sprite_frames = SubResource("SpriteFrames_bq7jo")
+[node name="Blimp" type="Sprite2D" parent="." unique_id=1059912021]
+position = Vector2(-30, -101)
+texture = ExtResource("2_uyw7u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1948041376]
-position = Vector2(0, -20)
+position = Vector2(-12, -106)
 shape = SubResource("CircleShape2D_h20fs")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=167426601]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1297417419]
-position = Vector2(0, -4)
+position = Vector2(5.1317573, -19.574179)
+rotation = -0.19665527
 shape = SubResource("RectangleShape2D_0ju24")

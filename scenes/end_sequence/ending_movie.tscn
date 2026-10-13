@@ -31,6 +31,13 @@
 [ext_resource type="Texture2D" uid="uid://boblfwvoe45q6" path="res://assets/textures/menus/ending_movie/Untitled_Artwork-28.png" id="29_ono17"]
 [ext_resource type="Texture2D" uid="uid://cj74egsuy5kf" path="res://assets/textures/menus/ending_movie/Untitled_Artwork-29.png" id="30_0c2br"]
 
+[sub_resource type="Gradient" id="Gradient_6j8os"]
+offsets = PackedFloat32Array(0.2696456, 0.7642527, 0.8798151)
+colors = PackedColorArray(0, 0.5516918, 0.6329985, 1, 0.86132514, 0.86132514, 0.86132514, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fobqu"]
+gradient = SubResource("Gradient_6j8os")
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ca42v"]
 animations = [{
 "frames": [{
@@ -168,6 +175,21 @@ anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_6qt6j")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=996585202]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1275.0
+offset_right = 1274.2961
+offset_bottom = 2936.0
+rotation = -1.5707964
+texture = SubResource("GradientTexture2D_fobqu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=705203053]
+layout_mode = 0
+offset_right = 1672.0
+offset_bottom = 1300.0
+color = Color(0.3958127, 0.78327274, 0.99999994, 0.32941177)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1029713714]
 position = Vector2(857, 905)
