@@ -18,6 +18,7 @@ gradient = SubResource("Gradient_50ba6")
 [node name="OpeningText2" type="Control" unique_id=607911600]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.86771953, 0.86771953)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_pcjkd")

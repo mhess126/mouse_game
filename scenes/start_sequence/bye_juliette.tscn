@@ -241,6 +241,7 @@ animations = [{
 [node name="ByeJulietteAnimation" type="Control" unique_id=607911600]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.8731023, 0.8719809)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_7qdpu")
@@ -281,11 +282,10 @@ texture = SubResource("GradientTexture1D_p3xr0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1029713714]
 position = Vector2(852, 344.00003)
-scale = Vector2(0.7206969, 0.7206969)
+scale = Vector2(0.7213174, 0.7206969)
 sprite_frames = SubResource("SpriteFrames_ca42v")
 autoplay = "default"
-frame = 58
-frame_progress = 0.7238136
+frame_progress = 0.53950876
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=714351759]
 position = Vector2(852, 768)

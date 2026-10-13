@@ -66,6 +66,11 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="StartMenu" type="Control" unique_id=607911600]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -0.99999994
+offset_top = -16.999998
+offset_right = -0.99999994
+offset_bottom = -16.999998
+scale = Vector2(0.87198603, 0.87198603)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_ifl8t")

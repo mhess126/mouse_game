@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.86651945, 0.86651945)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_ibk35")
@@ -41,5 +42,6 @@ text = "BACK
 
 [node name="ControlsKey" parent="." unique_id=76540129 instance=ExtResource("6_lgwst")]
 position = Vector2(704, 1086)
+scale = Vector2(1, 1.0020562)
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

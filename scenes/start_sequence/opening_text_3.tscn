@@ -17,6 +17,7 @@ gradient = SubResource("Gradient_tpya2")
 [node name="OpeningText1" type="Control" unique_id=607911600]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.86750275, 0.86750275)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_tpya2")
