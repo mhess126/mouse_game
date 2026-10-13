@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cnnd3r711xvva" path="res://scripts/hud.gd" id="1_e7rj4"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="2_gpbci"]
 [ext_resource type="Texture2D" uid="uid://dqwqekmb1mnrd" path="res://assets/textures/hud/stamina_back.png" id="3_78y4n"]
-[ext_resource type="Texture2D" uid="uid://ce1f1bstnpk4i" path="res://assets/textures/hud/stamina_outline.png" id="4_kfv8d"]
 [ext_resource type="Texture2D" uid="uid://c6517j5kpsqeu" path="res://assets/textures/hud/stamina_bar.png" id="5_jf72k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxesk"]
@@ -44,7 +43,6 @@ offset_bottom = 202.94916
 scale = Vector2(5, 0.59)
 nine_patch_stretch = true
 texture_under = ExtResource("3_78y4n")
-texture_over = ExtResource("4_kfv8d")
 texture_progress = ExtResource("5_jf72k")
 
 [node name="StaminaNumber" type="Label" parent="StaminaControl" unique_id=1326951601]

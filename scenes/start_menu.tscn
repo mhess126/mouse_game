@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfcpmeo7jbo3y"]
 
-[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_5qotc"]
+[ext_resource type="Script" uid="uid://b40equhx1unfa" path="res://scripts/menus/start_menu.gd" id="1_5qotc"]
 [ext_resource type="Texture2D" uid="uid://do21qnia3bmv8" path="res://assets/textures/bg/start-card.png" id="2_h61rw"]
 [ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="4_fcv5n"]
 

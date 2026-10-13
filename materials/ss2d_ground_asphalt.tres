@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_h3wq0"]
 [ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_ir2q1"]
-[ext_resource type="Texture2D" uid="uid://da8sgr5n0u5es" path="res://assets/textures/asphalt_top.png" id="3_oam5k"]
+[ext_resource type="Texture2D" uid="uid://ccuf1va4e163y" path="res://assets/textures/asphalt_top.png" id="3_oam5k"]
 [ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="4_2m6q3"]
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="5_2p7t4"]
 
