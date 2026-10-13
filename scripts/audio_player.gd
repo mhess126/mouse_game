@@ -8,7 +8,7 @@ var pickup = preload("res://assets/audio/reward_pickup.ogg")
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 
 func play_music() -> void:
-	#music_player.play()
+	music_player.play()
 	pass
 	
 func play_sfx(sfx_name: String):
