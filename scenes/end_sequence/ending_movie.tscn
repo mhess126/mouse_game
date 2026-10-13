@@ -172,6 +172,7 @@ animations = [{
 [node name="EndingMovie" type="Control" unique_id=607911600]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.86671513, 0.86671513)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_6qt6j")

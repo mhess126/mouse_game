@@ -8,8 +8,11 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -9.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.87375945, 0.87375945)
 script = ExtResource("1_vpk8d")
 
 [node name="CreditPage" type="Sprite2D" parent="." unique_id=1315177312]
