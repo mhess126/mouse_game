@@ -16,7 +16,7 @@ ss2d/version="3.3.2"
 
 config/name="Reach for the Sky"
 config/description="Help Juliette escape the junk yard and catch up with her migrating bird friends"
-run/main_scene="uid://figakeric4xe"
+run/main_scene="res://scenes/start_menu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://bnex267md207j"
 
@@ -28,6 +28,7 @@ AudioPlayer="*res://scenes/audio_player.tscn"
 
 window/size/viewport_width=1440
 window/size/viewport_height=1080
+window/size/resizable=false
 window/size/window_width_override=1440
 window/size/window_height_override=810
 window/stretch/mode="canvas_items"
