@@ -166,7 +166,7 @@ offset_bottom = -584.0
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_tpb3j")
 theme_override_font_sizes/font_size = 40
-text = "?????"
+text = "Sony Circle/XBox B/Nintendo A"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
