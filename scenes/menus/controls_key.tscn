@@ -56,19 +56,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Pause" type="Label" parent="ControlNames" unique_id=12244631]
-offset_left = -32.0
-offset_top = -264.0
-offset_right = 288.0
-offset_bottom = -196.0
-theme_override_constants/line_spacing = 20
-theme_override_fonts/font = ExtResource("1_tpb3j")
-theme_override_font_sizes/font_size = 65
-text = "PAUSE"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="Keyboard" type="Node2D" parent="." unique_id=1350417]
 position = Vector2(-104, 8)
 
@@ -129,21 +116,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyboardControls4" type="Label" parent="Keyboard" unique_id=333960737]
-custom_maximum_size = Vector2(575, 800)
-offset_left = -640.0
-offset_top = -264.0
-offset_right = -65.0
-offset_bottom = -200.0
-theme_override_constants/line_spacing = 20
-theme_override_fonts/font = ExtResource("1_tpb3j")
-theme_override_font_sizes/font_size = 40
-text = "Escape"
-horizontal_alignment = 2
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
 [node name="GamePad" type="Node2D" parent="." unique_id=1574876960]
 position = Vector2(-104, 8)
 
@@ -191,17 +163,5 @@ theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_tpb3j")
 theme_override_font_sizes/font_size = 40
 text = "D-pad"
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="GamePadControls4" type="Label" parent="GamePad" unique_id=1121310678]
-offset_left = 320.0
-offset_top = -264.0
-offset_right = 883.0
-offset_bottom = -200.0
-theme_override_constants/line_spacing = 20
-theme_override_fonts/font = ExtResource("1_tpb3j")
-theme_override_font_sizes/font_size = 40
-text = "Start/Xbox Menu, Nintendo +"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

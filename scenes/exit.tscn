@@ -30,3 +30,5 @@ shape = SubResource("CircleShape2D_h20fs")
 position = Vector2(5.1317573, -19.574179)
 rotation = -0.19665527
 shape = SubResource("RectangleShape2D_0ju24")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

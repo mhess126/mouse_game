@@ -6,10 +6,10 @@ extends Node2D
 @onready var start = $LevelStructure/Features/StartNode/Start
 @onready var exit = $LevelStructure/Features/Exit
 @onready var death_zone = $Deathzone
-@onready var music_player: AudioStreamPlayer = $MusicPlayer
 
 @onready var hud = $UILayer/HUD
 @onready var ui_layer = $UILayer
+const ENDING_MOVIE = preload("uid://nb6tyyxrefjb")
 
 var player = null
 
@@ -19,6 +19,7 @@ var timer_node = null
 var time_left
 
 var win = false
+
 
 func _ready():
 	AudioPlayer.music_player.stop()
@@ -39,7 +40,6 @@ func _ready():
 		print(reward_item)
 		reward_item.touched_player.connect(_on_reward_touched_player.bind(reward_item))
 	
-	exit.body_entered.connect(_on_exit_body_entered)
 	death_zone.body_entered.connect(_on_deathzone_body_entered)
 	hud.set_stamina_meter(player.stamina)
 
@@ -70,20 +70,11 @@ func reset_player():
 
 func _on_exit_body_entered(body):
 	if body is Player:
-		if is_final_level || (next_level != null):
-			exit.animate()
-			player.active = false
-			win = true
-			await get_tree().create_timer(1.5).timeout
-			if is_final_level:
-				ui_layer.show_win_screen(true)
-			else:
-				get_tree().change_scene_to_packed(next_level)
+		get_tree().change_scene_to_packed.call_deferred(ENDING_MOVIE)
 
 func _on_player_stamina_changed(value: int) -> void:
 	hud.set_stamina_meter(value)
 	pass # Replace with function body.
-
 
 func _on_propeller_reward_touched_player(emitter: Reward) -> void:
 	AudioPlayer.play_sfx("hurt")
