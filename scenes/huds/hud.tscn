@@ -44,10 +44,3 @@ scale = Vector2(5, 0.59)
 nine_patch_stretch = true
 texture_under = ExtResource("3_78y4n")
 texture_progress = ExtResource("5_jf72k")
-
-[node name="StaminaNumber" type="Label" parent="StaminaControl" unique_id=1326951601]
-layout_mode = 0
-offset_top = -25.0
-offset_right = 40.0
-offset_bottom = -2.0
-text = "99"
