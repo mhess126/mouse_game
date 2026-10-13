@@ -7,12 +7,12 @@
 [ext_resource type="StyleBox" uid="uid://btm3ema7fwmck" path="res://styles/basic_button_pressed.tres" id="5_5rnf3"]
 [ext_resource type="StyleBox" uid="uid://gie1hiu28efk" path="res://styles/basic_button_hover.tres" id="6_jllm8"]
 
-[sub_resource type="Gradient" id="Gradient_6j8os"]
+[sub_resource type="Gradient" id="Gradient_tpya2"]
 offsets = PackedFloat32Array(0.2696456, 0.7642527, 0.8798151)
 colors = PackedColorArray(0, 0.5516918, 0.6329985, 1, 0.86132514, 0.86132514, 0.86132514, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p3xr0"]
-gradient = SubResource("Gradient_6j8os")
+gradient = SubResource("Gradient_tpya2")
 
 [node name="OpeningText1" type="Control" unique_id=607911600]
 layout_mode = 3
