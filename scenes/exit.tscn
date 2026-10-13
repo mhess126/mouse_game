@@ -15,7 +15,8 @@ collision_mask = 2
 script = ExtResource("1_lxldl")
 
 [node name="Blimp" type="Sprite2D" parent="." unique_id=1059912021]
-position = Vector2(-30, -101)
+position = Vector2(1.9073486e-06, -107)
+rotation = -0.4634681
 scale = Vector2(-1, 1)
 texture = ExtResource("2_uyw7u")
 
