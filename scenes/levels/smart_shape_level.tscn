@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="9_mnrut"]
 [ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="10_ubkrh"]
 [ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="11_8jyg3"]
-[ext_resource type="Texture2D" uid="uid://da8sgr5n0u5es" path="res://assets/textures/asphalt_top.png" id="12_b8vq0"]
+[ext_resource type="Texture2D" uid="uid://ccuf1va4e163y" path="res://assets/textures/asphalt_top.png" id="12_b8vq0"]
 [ext_resource type="Script" uid="uid://mc8hrt0xxmjg" path="res://addons/rmsmartshape/shapes/mesh_cache.gd" id="14_gef0u"]
 [ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="15_e26m4"]
 [ext_resource type="Texture2D" uid="uid://dyxju281o5cnj" path="res://assets/textures/asphalt_corner.png" id="16_43lt7"]
@@ -327,9 +327,6 @@ position = Vector2(928, -1071)
 [node name="PropellerReward" parent="Features" unique_id=1518737599 instance=ExtResource("21_267y3")]
 position = Vector2(224, -1089)
 type = "propeller"
-
-[node name="WingReward" parent="." unique_id=42478789 instance=ExtResource("20_43lt7")]
-position = Vector2(516, -1130)
 
 [connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]
 
