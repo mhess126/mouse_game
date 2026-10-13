@@ -24,6 +24,7 @@ jobs:
       - name: Godot Web Export
         run: |
           mkdir -v -p build/web
+
           godot --headless --verbose --export-release "Web" build/web/index.html
 
       # Creates the output directory and compiles the web files
