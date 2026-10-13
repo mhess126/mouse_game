@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nb6tyyxrefjb"]
 
-[ext_resource type="Script" uid="uid://b40equhx1unfa" path="res://scripts/menus/start_menu.gd" id="1_6qt6j"]
+[ext_resource type="Script" uid="uid://dupxd6nggthd0" path="res://scripts/menus/ending_movie.gd" id="1_fobqu"]
 [ext_resource type="Texture2D" uid="uid://dguqjwb4xfvjh" path="res://assets/textures/menus/ending_movie/Untitled_Artwork-1.png" id="2_ueluh"]
 [ext_resource type="Texture2D" uid="uid://dvwblitmflj0q" path="res://assets/textures/menus/ending_movie/Untitled_Artwork-2.png" id="3_ybyun"]
 [ext_resource type="Texture2D" uid="uid://b882ky2cwmwb1" path="res://assets/textures/menus/ending_movie/Untitled_Artwork-3.png" id="4_innl5"]
@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("30_0c2br")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -175,7 +175,7 @@ anchors_preset = 0
 scale = Vector2(0.86671513, 0.86671513)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_6qt6j")
+script = ExtResource("1_fobqu")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=996585202]
 layout_mode = 0
@@ -197,5 +197,7 @@ position = Vector2(857, 905)
 scale = Vector2(0.77534324, 0.77534324)
 sprite_frames = SubResource("SpriteFrames_ca42v")
 autoplay = "default"
-frame = 39
-frame_progress = 0.1411382
+frame = 40
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

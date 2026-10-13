@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hmj71sphpyo7"]
 
-[ext_resource type="Script" uid="uid://betvwuyen4dcc" path="res://scripts/menus/upgrade_menu.gd" id="1_vpk8d"]
+[ext_resource type="Script" uid="uid://dw2w77ucte26j" path="res://scenes/end_sequence/credits.gd" id="1_1luj6"]
 [ext_resource type="Texture2D" uid="uid://clbjom8b6d58k" path="res://assets/textures/menus/credit-page.png" id="2_1luj6"]
 
 [node name="Credits" type="Control" unique_id=607911600]
@@ -13,7 +13,7 @@ offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.87375945, 0.87375945)
-script = ExtResource("1_vpk8d")
+script = ExtResource("1_1luj6")
 
 [node name="CreditPage" type="Sprite2D" parent="." unique_id=1315177312]
 position = Vector2(825, 636.5)
