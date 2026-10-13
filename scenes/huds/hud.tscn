@@ -21,10 +21,10 @@ script = ExtResource("1_e7rj4")
 
 [node name="StaminaControl" type="Control" parent="." unique_id=571355738]
 anchors_preset = 0
-offset_left = 70.0
-offset_top = 89.0
-offset_right = 110.0
-offset_bottom = 129.0
+offset_left = 56.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 88.0
 
 [node name="Stamina" type="Label" parent="StaminaControl" unique_id=983490262]
 visible = false
