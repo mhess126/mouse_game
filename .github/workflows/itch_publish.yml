@@ -22,9 +22,9 @@ jobs:
 
       # Builds the project using an optimized Godot engine Docker container
       - name: Godot Web Export
-        with:
-          relative_project_path: "./" # Adjust if your project.godot is inside a subfolder
-          godot_version: ${{ env.GODOT_VERSION }}
+        run: |
+          mkdir -v -p build/web
+          godot --headless --verbose --export-release "Web" build/web/index.html
 
       # Creates the output directory and compiles the web files
       - name: Build Web Target
