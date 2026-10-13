@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://dyc5feqrbwk7o"]
+
+[ext_resource type="FontFile" uid="uid://cljc24v5s6u88" path="res://assets/fonts/Epilogue-Regular.ttf" id="1_tpb3j"]
+
+[node name="ControlsKey" type="Node2D" unique_id=76540129]
+
+[node name="Title" type="Label" parent="." unique_id=21021595]
+offset_left = -240.0
+offset_top = -1024.0
+offset_right = 494.0
+offset_bottom = -919.0
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 100
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="ControlNames" type="Node2D" parent="." unique_id=260373884]
+position = Vector2(-104, 8)
+
+[node name="Pedal" type="Label" parent="ControlNames" unique_id=2017133239]
+offset_left = -32.0
+offset_top = -520.0
+offset_right = 288.0
+offset_bottom = -452.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 65
+text = "PEDAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Jump" type="Label" parent="ControlNames" unique_id=1597378891]
+offset_left = -24.0
+offset_top = -656.0
+offset_right = 280.0
+offset_bottom = -588.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 65
+text = "JUMP"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Move" type="Label" parent="ControlNames" unique_id=1389075322]
+offset_left = -24.0
+offset_top = -392.0
+offset_right = 296.0
+offset_bottom = -324.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 65
+text = "MOVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause" type="Label" parent="ControlNames" unique_id=12244631]
+offset_left = -32.0
+offset_top = -264.0
+offset_right = 288.0
+offset_bottom = -196.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 65
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Keyboard" type="Node2D" parent="." unique_id=1350417]
+position = Vector2(-104, 8)
+
+[node name="KeyboardControlsTitle" type="Label" parent="Keyboard" unique_id=16116706]
+offset_left = -576.0
+offset_top = -872.0
+offset_right = -56.0
+offset_bottom = -767.0
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 70
+text = "KEYBOARD"
+horizontal_alignment = 2
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="KeyboardControls" type="Label" parent="Keyboard" unique_id=881470147]
+custom_maximum_size = Vector2(575, 800)
+offset_left = -368.0
+offset_top = -648.0
+offset_right = -64.0
+offset_bottom = -584.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 40
+text = "J"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="KeyboardControls2" type="Label" parent="Keyboard" unique_id=883980712]
+custom_maximum_size = Vector2(575, 800)
+offset_left = -312.0
+offset_top = -520.0
+offset_right = -64.0
+offset_bottom = -456.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 40
+text = "K"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="KeyboardControls3" type="Label" parent="Keyboard" unique_id=919054970]
+custom_maximum_size = Vector2(575, 800)
+offset_left = -640.0
+offset_top = -392.0
+offset_right = -65.0
+offset_bottom = -328.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 40
+text = "A and D"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="KeyboardControls4" type="Label" parent="Keyboard" unique_id=333960737]
+custom_maximum_size = Vector2(575, 800)
+offset_left = -640.0
+offset_top = -264.0
+offset_right = -65.0
+offset_bottom = -200.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 40
+text = "Escape"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GamePad" type="Node2D" parent="." unique_id=1574876960]
+position = Vector2(-104, 8)
+
+[node name="GamePadControlsTitle" type="Label" parent="GamePad" unique_id=1260770322]
+offset_left = 320.0
+offset_top = -872.0
+offset_right = 832.0
+offset_bottom = -767.0
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 70
+text = "GAMEPAD"
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GamePadControls" type="Label" parent="GamePad" unique_id=412034350]
+offset_left = 320.0
+offset_top = -648.0
+offset_right = 832.0
+offset_bottom = -584.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 40
+text = "?????"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GamePadControls2" type="Label" parent="GamePad" unique_id=1934428966]
+offset_left = 320.0
+offset_top = -520.0
+offset_right = 952.0
+offset_bottom = -456.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 40
+text = "Sony Cross/Xbox A/Nintendo B"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GamePadControls3" type="Label" parent="GamePad" unique_id=334623420]
+offset_left = 320.0
+offset_top = -392.0
+offset_right = 688.0
+offset_bottom = -328.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 40
+text = "D-pad"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GamePadControls4" type="Label" parent="GamePad" unique_id=1121310678]
+offset_left = 320.0
+offset_top = -264.0
+offset_right = 883.0
+offset_bottom = -200.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_tpb3j")
+theme_override_font_sizes/font_size = 40
+text = "Start/Xbox Menu, Nintendo +"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

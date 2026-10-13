@@ -3,7 +3,7 @@ extends Node2D
 @export var next_level: PackedScene = null
 @export var is_final_level: bool = false
 
-@onready var start = $LevelStructure/Features/Start
+@onready var start = $LevelStructure/Features/StartNode/Start
 @onready var exit = $LevelStructure/Features/Exit
 @onready var death_zone = $Deathzone
 

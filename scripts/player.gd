@@ -5,8 +5,8 @@ class_name Player
 @export var stamina_recharge_rate: float = 100.0
 @export var stamina_recharge_delay: float = 0.3
 @export var pedal_stamina_cost: float = 2.0
-@export var gravity: float = 400.0
-@export var jump_force = 140
+@export var gravity: float = 500.0
+@export var jump_force = 300
 @export var speed: float = 400.0
 @export var max_jumps = 2
 @export var rotation_speed = 5.0

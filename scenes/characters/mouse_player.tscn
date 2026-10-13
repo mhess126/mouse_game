@@ -133,6 +133,7 @@ energy = 0.3
 shadow_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1367413356]
+position = Vector2(0, -154)
 zoom = Vector2(2, 2)
 limit_bottom = 255
 
